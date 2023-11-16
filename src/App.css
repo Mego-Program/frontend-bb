@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer utilities {
+    .bg-color-body {
+        background: #040413;
+    }
+    .color-btn-border-px {
+        border: solid 1px #040413;
+    }
+
+    .color-yellow {
+        color: #F6C927;
+    }
+    .b-yellow {
+        border: 1px solid #F6C927;
+    }
+    .bg-yellow {
+        background-color: #F6C927;
+    }
+
+    .app-container {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
+      }
+}
+
+body
+{
+    @apply
+    bg-color-body
+}
+
+header
+{
+    
+    @apply
+    h-max
+    text-neutral-50
+    bg-color-body
+    flex
+    justify-end
+    items-center
+    space-x-16
+}
+
+footer
+{
+    @apply
+    text-neutral-50
+    bg-color-body
+    flex
+    justify-end
+    items-center
+    space-x-16
+    
+}
+
+.btn
+{
+    @apply 
+    bg-color-body 
+    px-9 
+    rounded-md 
+    capitalize  
+    color-btn-border-px
+    ease-in 
+    duration-200;
+}
+
+.btn:hover
+{
+    @apply 
+    bg-yellow 
+}
+        /* © copyright | All Rights Reserved */
+/* 
+        position: absolute;
+        width: 304px;
+        height: 32px;
+        left: 1382px;
+        top: 5024px;
+        
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 180%;
+        /* or 32px */
+       

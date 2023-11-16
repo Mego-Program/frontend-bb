@@ -6,6 +6,13 @@ export default {
   ],
   theme: {
     extend: {},
+    // container: {
+    //   center: true,
+    //   padding: {
+    //     DEFAULR: '20px',
+    //     md: "50px",
+    //   }
+    // }
   },
   plugins: [],
 }

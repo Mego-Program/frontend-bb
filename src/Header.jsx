@@ -1,17 +1,35 @@
 import React from 'react'
 
+
 export default function Header() {
+
+
   return (<>
-    <div>
-        <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Managers</li>
-            <li>Mentors</li>
-            <li>Participants</li>
-        </ul>
-    </div>
-  
+    <header className='sticky top-0  w-full flex justify-center'>
+      <div className='flex flex-row items-center justify-center py-6 space-x-6 w-4/5'>
+
+        <div className='w-3/4 flex justify-end'>
+          <ul className='flex text-right space-x-6'>
+            <li className='hover:color-yellow'><a href="#home">Home</a></li>
+            <li className='hover:color-yellow'><a href="#AboutUs">About Us</a></li>
+            <li className='hover:color-yellow'><a href="#Managers">Managers</a></li>
+            <li className='hover:color-yellow'><a href="#Mentors">Mentors</a></li>
+            <li className='hover:color-yellow'><a href="#Participants">Participants</a></li>
+          </ul>
+        </div>
+
+        <div className='w-1/4 flex justify-end'>
+          <ul className='flex text-right space-x-6'>
+            <li className='hover:color-yellow items-center'><a href="#SignIn">Sign In</a></li>
+            <li className='color-yellow b-yellow rounded-md hover:text-neutral-50'>
+              <button className='btn'> Sign Up</button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
   </>
   )
 }
