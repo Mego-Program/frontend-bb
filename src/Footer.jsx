@@ -4,12 +4,12 @@ import './App.css'
 export default function Footer() {
   return (<>
     <footer className=' w-full justify-center'>
-      <div className='w-4/5 flex justify-center'>
-        <div className='flex flex-col w-1/2'>
+      <div className='w-4/5  flex flex-col lg:flex-row justify-center'>
+        <div className='flex flex-col w-1/2 lg:w-full lg:justify-center'>
           <div className='font-bold text-xl'>
             <span>Colman</span>
-            <samp className='color-yellow'>Dev</samp>
-            <samp>Cluc</samp>
+            <span className='color-yellow'>Dev</span>
+            <span>Cluc</span>
           </div>
         
           <div className='mt-5 pb-3'>
@@ -17,9 +17,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='flex flex-col justify-end w-1/2'>
-          <div className='flex justify-end'>
-            <ul className='flex text-right space-x-6'>
+        <div className='flex flex-col justify-end lg:justify-center w-1/2 lg:w-full'>
+          <div className='flex flex-col justify-end'>
+            <ul className='flex flex-row lg:flex-col text-right space-x-6'>
               <li className='hover:color-yellow'><a href="#home">Home</a></li>
               <li className='hover:color-yellow'><a href="#About">About</a></li>
               <li className='hover:color-yellow'><a href="#Tutorials">Tutorials</a></li>
@@ -27,7 +27,7 @@ export default function Footer() {
               <li className='hover:color-yellow'><a href="#Contact">Contact</a></li>
             </ul>
           </div>
-          <div className=' text-right mt-5 pb-3'>
+          <div className='flex f text-right mt-5 pb-3'>
             <h3>© copyright | All Rights Reserved</h3>
           </div>
         </div>

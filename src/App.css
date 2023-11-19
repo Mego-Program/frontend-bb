@@ -15,6 +15,7 @@
     .color-yellow {
         color: #F6C927;
     }
+      
     .b-yellow {
         border: 1px solid #F6C927;
     }
@@ -26,7 +27,7 @@
         display: grid;
         grid-template-rows: 1fr auto;
         min-height: 100vh;
-      }
+    }
 }
 
 body
@@ -77,18 +78,4 @@ footer
     @apply 
     bg-yellow 
 }
-        /* © copyright | All Rights Reserved */
-/* 
-        position: absolute;
-        width: 304px;
-        height: 32px;
-        left: 1382px;
-        top: 5024px;
-        
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 180%;
-        /* or 32px */
-       
+ 
