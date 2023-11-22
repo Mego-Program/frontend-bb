@@ -3,7 +3,7 @@ import './App.css'
 import BurgerButton from './BurgerButton'
 
 
-export default function Header() {
+export default function Nav() {
 
   const [activeLink, setActiveLink] = useState(null);
 

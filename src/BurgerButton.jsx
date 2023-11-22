@@ -11,7 +11,8 @@ const BurgerButton = () => {
     return (
         <div>
             <button
-                className="lg:hidden cursor-pointer z-50"
+                className={`lg:hidden sticky cursor-pointer z-50 transition-transform transform ${
+                    isOpen ? 'rotate-90' : 'rotate-0'}`}
                 onClick={handleButtonClick}
             >
                 <svg
@@ -32,7 +33,7 @@ const BurgerButton = () => {
 
             {isOpen && (
                 <header className='w-full h-[100vh] absolute inset-0'>
-                    <div className='absolute inset-0'>
+                    <div className='absolute inset-0 '>
                         <ul className='h-full grid place-items-center py-20'>
                             <li className='hover:color-yellow'><a href="#home">Home</a></li>
                             <li className='hover:color-yellow'><a href="#AboutUs">About Us</a></li>
@@ -48,3 +49,4 @@ const BurgerButton = () => {
 };
 
 export default BurgerButton;
+
