@@ -244,3 +244,6 @@ async function getPlansPage() {
 }
 getPlansPage();
 
+getPlansPage();
+
+
