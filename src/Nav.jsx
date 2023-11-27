@@ -3,7 +3,7 @@ import './App.css'
 import BurgerButton from './BurgerButton'
 
 
-export default function Header() {
+export default function Nav() {
 
   const [activeLink, setActiveLink] = useState(null);
 
@@ -22,12 +22,11 @@ export default function Header() {
 
         <div className='w-3/4 hidden lg:flex justify-end'>
           <ul className='flex text-right space-x-6'>
-            <li className='hover:color-yellow'><a href="/home" onClick={() => handleLinkClick(1)} className={getLinkClassName(1)}>Home</a></li>
-            <li className='hover:color-yellow'><a href="/AboutUs" onClick={() => handleLinkClick(2)} className={getLinkClassName(2)}>About Us</a></li>
-            <li className="hover:color-yellow focus:color-yellow"><a href="/Test">add anoter page</a></li>
-            <li className='hover:color-yellow'><a href="/Managers" onClick={() => handleLinkClick(3)} className={getLinkClassName(3)}>Managers</a></li>
-            <li className='hover:color-yellow'><a href="/Mentors" onClick={() => handleLinkClick(4)} className={getLinkClassName(4)}>Mentors</a></li>
-            <li className='hover:color-yellow'><a href="/Participants" onClick={() => handleLinkClick(5)} className={getLinkClassName(5)}>Participants</a></li>
+            <li className='hover:color-yellow'><a href="#home" onClick={() => handleLinkClick(1)} className={getLinkClassName(1)}>Home</a></li>
+            <li className='hover:color-yellow'><a href="#AboutUs" onClick={() => handleLinkClick(2)} className={getLinkClassName(2)}>About Us</a></li>
+            <li className='hover:color-yellow'><a href="#Managers" onClick={() => handleLinkClick(3)} className={getLinkClassName(3)}>Managers</a></li>
+            <li className='hover:color-yellow'><a href="#Mentors" onClick={() => handleLinkClick(4)} className={getLinkClassName(4)}>Mentors</a></li>
+            <li className='hover:color-yellow'><a href="#Participants" onClick={() => handleLinkClick(5)} className={getLinkClassName(5)}>Participants</a></li>
           </ul>
         </div>
 
@@ -42,8 +41,9 @@ export default function Header() {
 
       </div>
 
-        <BurgerButton />
-      </header>
-    </>
-  );
+      <BurgerButton />
+    </header>
+
+  </>
+  )
 }

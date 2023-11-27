@@ -25,9 +25,20 @@
 
     .app-container {
         display: grid;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: auto 1fr;
         min-height: 100vh;
     }
+}
+
+*
+{
+    @apply
+    p-0
+    m-0
+}
+
+::-webkit-scrollbar {
+    display: none; /* הסתרת הסרגל בדפדפני WebKit (כולל Chrome ו־Safari) */
 }
 
 body
