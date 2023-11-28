@@ -9,7 +9,7 @@ async function getTeamMembers() {
             filter: {
                 type: 'team_member',
                 fields: {
-                   
+
                 }
             }
         });
@@ -193,21 +193,23 @@ async function getHeroSection() {
 
 //******************************************************************************/
 
-// Internal Blog.
-async function getInternalBlog() {
+    // **************Internal Blog.************************** //
+async function getInternalBlog(fields = ['title', 'content', 'seo_tag']) {
     try {
         const items = await client.items.all({
             filter: {
                 type: 'internal_blog',
-                // Additional filter options can be added here.
-            }
+            },
+            fields: fields
         });
 
-        const internalBlog = items.map(item => ({
-            title: item.title,
-            content: item.content,
-            seo_tag: item.seoTag
-        }));
+        const internalBlog = items.map(item => {
+            let result = {};
+            fields.forEach(field => {
+                result[field] = item[field];
+            });
+            return result;
+        });
 
         console.log('Internal Blog:', internalBlog);
         return internalBlog;
@@ -216,7 +218,32 @@ async function getInternalBlog() {
     }
 }
 
+// getInternalBlog(['title', 'content']); 
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Previous function - gets all the fields with their data.
+// async function getInternalBlog() {
+//     try {
+//         const items = await client.items.all({
+//             filter: {
+//                 type: 'internal_blog',
+//             }
+//         });
+
+//         const internalBlog = items.map(item => ({
+//             title: item.title,
+//             content: item.content,
+//             seo_tag: item.seoTag
+//         }));
+
+//         console.log('Internal Blog:', internalBlog);
+//         return internalBlog;
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
 // getInternalBlog();
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //********************************************************************************** */
 
@@ -227,20 +254,19 @@ async function getPlansPage() {
             filter: {
                 type: 'plans_page',
                 fields: {
-                    
-                    }
                 }
+            }
         });
 
         const getPlansPage = items.map(item => ({
             displayed_description: item.displayedDescription,
         }));
 
-        console.log('Team Members:', getPlansPage);
+        console.log('Plans page:', getPlansPage);
         return getPlansPage;
     } catch (error) {
         console.error('Error:', error);
     }
 }
-getPlansPage();
+// getPlansPage();
 
