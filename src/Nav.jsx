@@ -17,7 +17,7 @@ export default function Nav() {
     return linkId === activeLink ? 'color-yellow' : 'hover:color-yellow';
   };
   return (<>
-    <header className='sticky top-0  w-full flex justify-center'>
+    <header className='sticky top-0  w-full flex justify-center z-[3]'>
       <div className=' flex flex-row items-center justify-center py-6 space-x-6 w-4/5'>
 
         <div className='w-3/4 hidden lg:flex justify-end'>

@@ -11,7 +11,7 @@ const BurgerButton = () => {
     return (
         <div>
             <button
-                className={`lg:hidden sticky cursor-pointer z-50 transition-transform transform ${
+                className={`lg:hidden sticky cursor-pointer z-[3] transition-transform transform ${
                     isOpen ? 'rotate-90' : 'rotate-0'}`}
                 onClick={handleButtonClick}
             >
