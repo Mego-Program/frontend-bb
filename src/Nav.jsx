@@ -32,9 +32,9 @@ export default function Nav() {
 
         <div className='w-1/4 flex justify-end items-end'>
           <ul className='flex text-right space-x-6'>
-            <li className='hover:color-yellow items-end'><a href="#SignIn" onClick={() => handleLinkClick(6)} className={getLinkClassName(6)}>Sign In</a></li>
+            <li className=' w-32 hover:color-yellow items-end'><a href="#SignIn" onClick={() => handleLinkClick(6)} className={getLinkClassName(6)}>Sign In</a></li>
             <li className='color-yellow b-yellow rounded-md hover:text-neutral-50'>
-              <button className='btn'> Sign Up</button>
+              <button className='btn '> Sign Up</button>
             </li>
           </ul>
         </div>

@@ -76,7 +76,10 @@ footer
 {
     @apply 
     bg-color-body 
-    px-9 
+    lg:px-9 
+    px-5
+    w-32
+    lg:w-36
     rounded-md 
     capitalize  
     color-btn-border-px
