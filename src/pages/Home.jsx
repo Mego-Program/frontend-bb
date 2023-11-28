@@ -8,12 +8,12 @@ export default function Home() {
         <div className='w-[100vw] min-h-screen flex justify-center my-5'
             style={{ backgroundImage: "url('Lines 1.png')" }}>
             <div className=' w-4/5'>
-                <div className='flex items-center h-[450px] w-full '>
-                    <div className=' w-1/2 '>
+                <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
+                    <div className='flex flex-col w-full lg:w-1/2 '>
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                             <div className='my-2'>
-                                <span className="">Let’s build skills with<br />Colman</span>
+                                <span>Let’s build skills with<br />Colman</span>
                                 <span className="text-amber-400 ">Dev</span>
                                 <span>Club & learn<br />without limits</span>
                             </div>
@@ -27,9 +27,8 @@ export default function Home() {
                             </button>
                         </div>
 
-
                     </div>
-                    <div className='col-span-1 w-1/2 h-full flex justify-end'>
+                    <div className='flex col-span-1 w-full lg:w-1/2 h-full  justify-end'>
                         <img className=' h-full' src="../public/home_header.png" alt="" />
                     </div>
                 </div>
