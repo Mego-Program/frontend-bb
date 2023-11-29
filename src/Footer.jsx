@@ -95,13 +95,13 @@ export default function Footer() {
                 a developers club training students for their job as full stack developers.
                 our menors are coming from the industry to help us do it.</p>
             </div>
-            <div className=" flex justify-around items-center w-2/3 lg:w-1/3 my-4 text-2xl font-medium capitalize leading-10">
-              <div className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg">
+            <div className=" flex justify-around items-center w-2/3 lg:w-1/3 my-4 lg:text-2xl text-lg font-medium capitalize leading-10">
+              <button className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg">
                 <h1>Try Yourself</h1>
-              </div>
-              <div className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg">
+              </button>
+              <button className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg mx-3">
                 <h1 className='text-slate-900'>Get Started</h1>
-              </div>
+              </button>
 
             </div>
           </div>
