@@ -248,28 +248,36 @@ async function getInternalBlog(fields = ['title', 'content', 'seo_tag']) {
 //********************************************************************************** */
 
 // Plans Page.
-async function getPlansPage() {
+async function getPlansPage(departmentName) {
     try {
-        const items = await client.items.all({
+        const queryFilter = {
             filter: {
                 type: 'plans_page',
-                fields: {
-                }
             }
-        });
+        };
+        
+        // Add department filter if a department name is provided
+        if (departmentName) {
+            queryFilter.filter.fields = {
+                department: {
+                    eq: departmentName
+                }
+            };
+        }
 
-        const getPlansPage = items.map(item => ({
+        const items = await client.items.all(queryFilter);
+
+        const plans = items.map(item => ({
             displayed_description: item.displayedDescription,
+            // department: item.department // You can include this to verify the department
         }));
 
-        console.log('Plans page:', getPlansPage);
-        return getPlansPage;
+        console.log('Plans page:', plans);
+        return plans;
     } catch (error) {
         console.error('Error:', error);
     }
 }
-// getPlansPage();
 
-getPlansPage();
-
-
+// Example usage
+getPlansPage('Pro'); 
