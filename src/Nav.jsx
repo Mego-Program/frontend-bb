@@ -58,12 +58,13 @@ export default function Nav() {
                 </Link>
               </li>
               <li className="hover:color-yellow">
+
                 <Link
-                  to="/Participants"
+                  to="/contactus"
                   onClick={() => handleLinkClick(5)}
                   className={getLinkClassName(5)}
                 >
-                  Participants
+                  Contact Us
                 </Link>
               </li>
             </ul>
