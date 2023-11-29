@@ -50,11 +50,11 @@ export default function Nav() {
               </li>
               <li className="hover:color-yellow">
                 <Link
-                  to="/Mentors"
+                  to="/price"
                   onClick={() => handleLinkClick(4)}
                   className={getLinkClassName(4)}
                 >
-                  Mentors
+                  Price
                 </Link>
               </li>
               <li className="hover:color-yellow">
