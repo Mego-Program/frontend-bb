@@ -1,8 +1,50 @@
-import '../App.css'
-import ComponentHeaderHome from '../ComponentHeaderHome'
-import Check from '../Check'
+import '../App.css';
+import ComponentHeaderHome from '../ComponentHeaderHome';
+import Check from '../Check';
+import React, { useState, useEffect } from 'react';
+import { getPlansPage } from '../cms.cjs';
 
 export default function Home() {
+    
+    const [planDescription, setPlanDescription] = useState({}); 
+
+    useEffect(() => {
+        async function fetchData() {
+            const plans = await getPlansPage();
+            //console.log(plans)
+            const myPlans = {}
+            plans.forEach((plan) => {
+                myPlans[plan.department] = plan.displayedDescription;
+            })
+            setPlanDescription(myPlans);
+
+            console.log({myPlans})
+        }
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (planDescription) {
+            console.log(planDescription); // This will log the string without brackets
+        }
+    }, [planDescription]);
+    
+    // const [plansPage, setPlansPage] = useState("");
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const plans = await getPlansPage('Free');
+    //         if (plans && plans.length > 0) {
+    //             const a = plans[0].displayed_description;
+    //             setPlansPage(a);
+    //         }
+    //     }
+    //     fetchData();
+    // }, []);
+
+    // useEffect(() => {
+    //     console.log(plansPage);
+    // }, [plansPage]);
 
     return (<>
         <div className='w-[100vw] min-h-screen flex justify-center my-5'
@@ -13,7 +55,7 @@ export default function Home() {
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                             <div className='my-2'>
-                                <span>Let’s build skills with<br />Colman</span>
+                                <span>{planDescription['Pro']}<br />Colman</span>
                                 <span className="text-amber-400 ">Dev</span>
                                 <span>Club & learn<br />without limits</span>
                             </div>

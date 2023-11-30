@@ -1,4 +1,5 @@
-const { SiteClient } = require('datocms-client');
+//const { SiteClient } = require('datocms-client');
+import { SiteClient } from 'datocms-client';
 
 const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
 
@@ -248,7 +249,7 @@ async function getInternalBlog(fields = ['title', 'content', 'seo_tag']) {
 //********************************************************************************** */
 
 // Plans Page.
-async function getPlansPage(departmentName) {
+export async function getPlansPage(departmentName) {
     try {
         const queryFilter = {
             filter: {
@@ -267,17 +268,12 @@ async function getPlansPage(departmentName) {
 
         const items = await client.items.all(queryFilter);
 
-        const plans = items.map(item => ({
-            displayed_description: item.displayedDescription,
-            // department: item.department // You can include this to verify the department
-        }));
-
-        console.log('Plans page:', plans);
-        return plans;
+        console.log(items);
+        return items;
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
 // Example usage
-getPlansPage('Pro'); 
+//getPlansPage('Pro'); 
