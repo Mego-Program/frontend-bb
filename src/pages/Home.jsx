@@ -2,33 +2,33 @@ import '../App.css';
 import ComponentHeaderHome from '../ComponentHeaderHome';
 import Check from '../Check';
 import React, { useState, useEffect } from 'react';
-import { getPlansPage } from '../cms.cjs';
+import { getHeroSection } from '../../cms-to-hero';
 
 export default function Home() {
     
-    const [planDescription, setPlanDescription] = useState({}); 
+    const [heroSection, setHeroSection] = useState({}); 
 
     useEffect(() => {
         async function fetchData() {
-            const plans = await getPlansPage();
-            //console.log(plans)
-            const myPlans = {}
-            plans.forEach((plan) => {
-                myPlans[plan.department] = plan.displayedDescription;
+            const heroSecs = await getHeroSection();
+            // console.log(heroSec);
+            const myHero = {}
+            heroSecs.forEach((heroSec) => {
+                myHero[heroSec.title] = heroSec.description;
             })
-            setPlanDescription(myPlans);
+            setHeroSection(myPlans);
 
-            console.log({myPlans})
+            console.log({heroSecs})
         }
 
         fetchData();
     }, []);
 
     useEffect(() => {
-        if (planDescription) {
-            console.log(planDescription); // This will log the string without brackets
+        if (heroSection) {
+            console.log(heroSection); // This will log the string without brackets
         }
-    }, [planDescription]);
+    }, [heroSection]);
     
 
     return (<>
@@ -40,7 +40,7 @@ export default function Home() {
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                             <div className='my-2'>
-                                <span>{planDescription['Pro']}<br />Colman</span>
+                                <span>{heroSection['First']}<br />Colman</span>
                                 <span className="text-amber-400 ">Dev</span>
                                 <span>Club & learn<br />without limits</span>
                             </div>

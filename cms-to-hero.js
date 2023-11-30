@@ -3,7 +3,7 @@ import { SiteClient } from 'datocms-client';
 const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
 
 // Hero section.
-async function getHeroSection() {
+export async function getHeroSection() {
     try {
         const heroSections = await client.items.all({
             filter: {
