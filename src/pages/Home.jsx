@@ -30,21 +30,6 @@ export default function Home() {
         }
     }, [planDescription]);
     
-    // const [plansPage, setPlansPage] = useState("");
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const plans = await getPlansPage('Free');
-    //         if (plans && plans.length > 0) {
-    //             const a = plans[0].displayed_description;
-    //             setPlansPage(a);
-    //         }
-    //     }
-    //     fetchData();
-    // }, []);
-
-    // useEffect(() => {
-    //     console.log(plansPage);
-    // }, [plansPage]);
 
     return (<>
         <div className='w-[100vw] min-h-screen flex justify-center my-5'
