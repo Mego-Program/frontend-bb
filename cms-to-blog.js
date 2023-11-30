@@ -1,4 +1,4 @@
-   // **************Internal Blog.************************** //
+//Internal Blog.
    async function getInternalBlog(fields = ['title', 'content', 'seo_tag']) {
     try {
         const items = await client.items.all({
