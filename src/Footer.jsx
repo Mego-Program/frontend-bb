@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import CostumerComments from './CostumerComments'
 import ItemTag from './ItemTag'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (<>
@@ -123,11 +124,11 @@ export default function Footer() {
             <div className='flex flex-col justify-end lg:justify-center  lg:w-1/2'>
               <div className='lg:flex lg:justify-end'>
                 <ul className='flex flex-col lg:flex-row text-center space-x-6'>
-                  <li className='hover:color-yellow'><a href="/home">Home</a></li>
-                  <li className='hover:color-yellow'><a href="/About">About</a></li>
+                  <li className='hover:color-yellow'><Link to="/home">Home</Link></li>
+                  <li className='hover:color-yellow'><Link to="/about">About Us</Link></li>
                   <li className='hover:color-yellow'><a href="/Tutorials">Tutorials</a></li>
                   <li className='hover:color-yellow'><a href="/Resources">Resources</a></li>
-                  <li className='hover:color-yellow'><a href="/Contact">Contact</a></li>
+                  <li className='hover:color-yellow'><Link to="/contactus">Contact Us</Link></li>
                 </ul>
               </div>
               <div className='lg:text-right text-center h-full mt-5 pb-3'>
