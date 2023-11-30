@@ -1,3 +1,7 @@
+import { SiteClient } from 'datocms-client';
+
+const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
+
 //Internal Blog.
    async function getInternalBlog(fields = ['title', 'content', 'seo_tag']) {
     try {

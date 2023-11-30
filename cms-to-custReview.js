@@ -1,3 +1,7 @@
+import { SiteClient } from 'datocms-client';
+
+const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
+
 // Customer Reviews.
 async function getCustomerReviews() {
     try {
