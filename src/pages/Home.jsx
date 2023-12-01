@@ -16,7 +16,7 @@ export default function Home() {
             heroSecs.forEach((heroSec) => {
                 myHero[heroSec.title] = heroSec.description;
             })
-            setHeroSection(myPlans);
+            setHeroSection(myHero);
 
             console.log({heroSecs})
         }
@@ -26,7 +26,7 @@ export default function Home() {
 
     useEffect(() => {
         if (heroSection) {
-            console.log(heroSection); // This will log the string without brackets
+            console.log(heroSection); 
         }
     }, [heroSection]);
     
@@ -40,7 +40,7 @@ export default function Home() {
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                             <div className='my-2'>
-                                <span>{heroSection['First']}<br />Colman</span>
+                                <span>{heroSection['']}<br />Colman</span>
                                 <span className="text-amber-400 ">Dev</span>
                                 <span>Club & learn<br />without limits</span>
                             </div>
