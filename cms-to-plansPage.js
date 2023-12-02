@@ -11,7 +11,6 @@ export async function getPlansPage(departmentName) {
             }
         };
         
-        // Add department filter if a department name is provided
         if (departmentName) {
             queryFilter.filter.fields = {
                 department: {
@@ -29,5 +28,4 @@ export async function getPlansPage(departmentName) {
     }
 }
 
-// Example usage
 //getPlansPage('Pro'); 
