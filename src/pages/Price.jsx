@@ -1,6 +1,6 @@
 import React from 'react'
 import Entry from '../Entry';
-import Pricing from '../Pricing';
+import Pricing from "../../listpricing";
 
 function createEntry(priceTerm) {
     return (
@@ -16,11 +16,11 @@ function createEntry(priceTerm) {
 
 export default function Price() {
     return (<>
-        <div className="bg-white ">Ido</div>
+        {/* <div className="bg-white ">Ido</div> */}
         <div>
-            <h1 >
+            {/* <h1 >
                 <span>Pricing</span>
-            </h1>
+            </h1> */}
             <dl className="dictionary">{Pricing.map(createEntry)}</dl>
         </div>
 

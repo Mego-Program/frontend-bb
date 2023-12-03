@@ -23,7 +23,7 @@ export default function Nav() {
             <ul className="flex text-right space-x-6">
               <li className="hover:color-yellow">
                 <Link
-                  to="/home"
+                  to="/"
                   onClick={() => handleLinkClick(1)}
                   className={getLinkClassName(1)}
                 >
