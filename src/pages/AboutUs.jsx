@@ -1,13 +1,43 @@
-import React from "react"
+// import React from "react"
 import Benefits from "../Benefits"
+import { getHeroSection } from '../../cms-to-hero';
+import React, { useState, useEffect } from 'react';
+
 
 export default function AboutUs() {
+    
+    const [heroSection, setHeroSection] = useState({}); 
+
+    useEffect(() => {
+        async function fetchData() {
+            const heroSecs = await getHeroSection();
+            // console.log(heroSec);
+            const myHero = {}
+            heroSecs.forEach((heroSec) => {
+                myHero[heroSec.title] = heroSec.description;
+            })
+            setHeroSection(myHero);
+
+            console.log({heroSecs})
+        }
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (heroSection) {
+            console.log(heroSection); 
+        }
+    }, [heroSection]);
+    
+    
+    
     return (<>
         <div className="w-screen h-screen flex justify-center my-5"
             style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
             <div className="w-[80%] h-[auto]">
                 <div style={{marginBottom: "20px"}}>
-                    <span className="text-white text-4xl font-bold capitalize leading-[72px]">The benefits </span>
+                    <span className="text-white text-4xl font-bold capitalize leading-[72px]">{heroSection['AboutUs']}</span>
                     <span className="text-amber-400 text-4xl font-bold capitalize leading-[72px]">for our team </span><br/>
                     <span className="text-white">The well being of each team member is really important to all of us. That is why we offer the following benefits.</span>
                 </div>
