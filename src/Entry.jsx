@@ -4,13 +4,16 @@ function Entry(props) {
   return (
     <div className="term">
       <dt>
-        <span className="titel" role="img" aria-label="Tense Biceps">
+        <span className="titel" >
           {props.type}
         </span>
         <span >{props.name}</span>
       </dt>
       <dd >{props.description}</dd>
-      <button className="B-button">{props.btu}</button>
+      <span className="B-button" >
+          {props.btu}
+        </span>
+      
     </div>
   );
 }
