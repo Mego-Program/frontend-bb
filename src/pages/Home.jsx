@@ -1,7 +1,6 @@
 import '../App.css'
 import ComponentHeaderHome from '../ComponentHeaderHome'
 import Check from '../Check'
-import Section from '../section'
 
 export default function Home() {
 
