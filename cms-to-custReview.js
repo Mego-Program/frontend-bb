@@ -26,5 +26,3 @@ async function getCustomerReviews() {
         console.error('Error:', error);
     }
 }
-
-// getCustomerReviews();

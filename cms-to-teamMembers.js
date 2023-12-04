@@ -1,4 +1,3 @@
-//const { SiteClient } = require('datocms-client');
 import { SiteClient } from 'datocms-client';
 
 const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
@@ -31,7 +30,7 @@ async function getTeamMembers() {
     }
 }
 
-// Function to get team members from the Managers department.
+// 
 async function getManagers() {
     try {
         const items = await client.items.all({
@@ -62,7 +61,7 @@ async function getManagers() {
 }
 
 
-// Function to get team members from the Marketing department.
+// Getting Marketing team members.
 async function getMarketing() {
     try {
         const items = await client.items.all({
@@ -93,7 +92,7 @@ async function getMarketing() {
 }
 
 
-// Function to get team members from the Mentors department.
+// Getting Mentors department.
 async function getMentors() {
     try {
         const items = await client.items.all({
@@ -122,12 +121,7 @@ async function getMentors() {
         console.error('Error:', error);
     }
 }
-// window.getMentors = getMentors;
 
-// getTeamMembers();
-// getManagers();
-// getMentors();
-// getMarketing();
 
 
 

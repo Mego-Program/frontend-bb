@@ -26,29 +26,3 @@ const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
         console.error('Error:', error);
     }
 }
-
-// getInternalBlog(['title', 'content']); 
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Previous function - gets all the fields with their data.
-// async function getInternalBlog() {
-//     try {
-//         const items = await client.items.all({
-//             filter: {
-//                 type: 'internal_blog',
-//             }
-//         });
-
-//         const internalBlog = items.map(item => ({
-//             title: item.title,
-//             content: item.content,
-//             seo_tag: item.seoTag
-//         }));
-
-//         console.log('Internal Blog:', internalBlog);
-//         return internalBlog;
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
-// getInternalBlog();

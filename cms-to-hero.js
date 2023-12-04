@@ -28,5 +28,3 @@ export async function getHeroSection(titleName) {
     console.error('Error:', error);
 }
 }
-
-// getHeroSection();
