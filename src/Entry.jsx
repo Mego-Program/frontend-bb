@@ -5,15 +5,15 @@ function Entry(props) {
     <div className="term">
       <dt>
         <span className="titel" >
-          {props.type}
+          {props.title}
         </span>
-        <span >{props.name}</span>
+        <span >{props.price}</span>
       </dt>
       <dd >{props.description}</dd>
       <span className="B-button" >
-          {props.btu}
-        </span>
-      
+        {props.btu}
+      </span>
+
     </div>
   );
 }

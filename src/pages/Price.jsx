@@ -6,17 +6,17 @@ import { getPlansPage } from '../../cms-to-plansPage';
 function createEntry(priceTerm) {
     return (
       <Entry
-        key={priceTerm.id}
-        type={priceTerm.titel}
-        name={priceTerm.price}
-        description={priceTerm.meaning}
+        title={priceTerm.title}
+        price={priceTerm.the_price}
+        description={priceTerm.text}
         btu={priceTerm.button}
       />
     );
   }
 
 export default function Price() {
-  const [plansPage, setPlansPage] = useState(getPlansPage) 
+  
+    const [plansPage, setPlansPage] = useState(getPlansPage) 
 
 useEffect(() => {
     async function fetchData() {
@@ -24,7 +24,7 @@ useEffect(() => {
         // console.log(heroSec);
         const myPlan = {}
         plPg.forEach((plPg) => {
-            myPlan[plPg.department] = plPg.displayed_description;
+            myPlan[plPg.title] = plPg.description;
         })
         setPlansPage(myPlan);
 
@@ -42,11 +42,7 @@ useEffect(() => {
 
 
     return (<>
-        {/* <div className="bg-white ">Ido</div> */}
         <div>
-            {/* <h1 >
-                <span>Pricing</span>
-            </h1> */}
             <dl className="dictionary">{plansPage.map(createEntry)}</dl>
         </div>
 
