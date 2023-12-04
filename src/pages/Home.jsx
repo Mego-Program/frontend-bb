@@ -1,8 +1,35 @@
-import '../App.css'
-import ComponentHeaderHome from '../ComponentHeaderHome'
-import Check from '../Check'
+import '../App.css';
+import ComponentHeaderHome from '../ComponentHeaderHome';
+import Check from '../Check';
+import React, { useState, useEffect } from 'react';
+import { getHeroSection } from '../../cms-to-hero';
 
 export default function Home() {
+    
+    const [heroSection, setHeroSection] = useState({}); 
+
+    useEffect(() => {
+        async function fetchData() {
+            const heroSecs = await getHeroSection();
+            // console.log(heroSec);
+            const myHero = {}
+            heroSecs.forEach((heroSec) => {
+                myHero[heroSec.title] = heroSec.description;
+            })
+            setHeroSection(myHero);
+
+            console.log({heroSecs})
+        }
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (heroSection) {
+            console.log(heroSection); 
+        }
+    }, [heroSection]);
+    
 
     return (<>
         <div className='w-[100vw] min-h-screen flex justify-center my-5'
@@ -13,7 +40,7 @@ export default function Home() {
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                             <div className='my-2'>
-                                <span>Let’s build skills with<br />Colman</span>
+                                <span>{heroSection['Home']}<br />Colman</span>
                                 <span className="text-amber-400 ">Dev</span>
                                 <span>Club & learn<br />without limits</span>
                             </div>
