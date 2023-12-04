@@ -14,7 +14,7 @@ export default function Home() {
                             <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                                 <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                                 <div className='my-2'>
-                                    <span>Let’s build skills with<br />Colman</span>
+                                    <span>Let's build skills with<br />Colman</span>
                                     <span className="text-amber-400 ">Dev</span>
                                     <span>Club & learn<br />without limits</span>
                                 </div>
