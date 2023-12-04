@@ -1,5 +1,6 @@
 import React from 'react'
 import OurStory from '../OurStory'
+import EmployeeCard from '../EmployeeCard'
 
 export default function Managers() {
   return (<>
@@ -7,7 +8,7 @@ export default function Managers() {
       <div className='w-full flex justify-center bg-gray-950'
         style={{ backgroundImage: "url('Lines 1.png')" }}>
         <div className='w-4/5'>
-          <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
+          <div className='flex flex-col lg:flex-row items-center h-[750px] lg:h-[450px] w-full '>
             <div className='flex flex-col w-full lg:w-1/2 '>
               <div className='text-left text-white text-4xl font-bold capitalize leading-10 my-5'>
                 <div className='my-5  '>
@@ -34,21 +35,61 @@ export default function Managers() {
             </div>
           </div>
 
-          {/* <div className='flex w-full justify-between mt-5'>
-            <div className="w-48 h-7 text-amber-400 text-3xl font-bold  capitalize leading-10">
-              OUR STORY<br /></div>
-            <OurStory title='THE BEGINNING' year='1997' />
-            <OurStory title='FINDING OUR FEET' year='1999' />
-            <OurStory title='DIGITAL SINGULARITY' year='2000' />
-            <OurStory title='ONWARDS' year='2003' />
-            <OurStory title='EXPANDING' year='2015' />
-            <OurStory title='UPWARDS' year='2020' />
-          </div> */}
+
+          <div className='max-w-full my-8'>
+            <div className=' flex flex-row justify-between overflow-scroll text-base text-center'>
+              <div className="flex justify-start items-center min-w-[180px] h-16 text-amber-400 text-2xl font-bold  capitalize leading-10">
+                <h1>OUR STORY</h1>
+              </div>
+              <OurStory title='THE BEGINNING' year='1997' />
+              <OurStory title='FINDING OUR FEET' year='1999' />
+              <OurStory title='DIGITAL SINGULARITY' year='2000' />
+              <OurStory title='ONWARDS' year='2003' />
+              <OurStory title='EXPANDING' year='2015' />
+              <OurStory title='UPWARDS' year='2020' />
+            </div>
+          </div>
 
         </div>
       </div>
 
+      <div className='w-full flex justify-center bg-gray-950'
+        style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
+        <div className='w-4/5'>
+          <div className='flex flex-row w-full h-[200px] space-x-4 '>
+            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+              <button className='w-full h-full'>
+                <h1>managers</h1>
+              </button>
+            </div>
+            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+              <button className='w-full h-full'>
+                <h1>participants</h1>
+              </button>
+            </div>
+            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+              <button className='w-full h-full'>
+                <h1>mentors</h1>
+              </button>
+            </div>
+          </div>
 
+
+          <div className="w-full text-white text-base text-left font-light capitalize leading-10">
+            <p>
+              we have become specialists at turning new ideas into viable products for our client’s organizations. 
+              Some of the more rewarding projects we have had the honour to be involved in, 
+              started with simple ideas and grew into profitable businesses
+              from the ground up. <br /> It brings us great joy to see our clients gain market share in their industries through
+              our web-based solutions.
+            </p>
+          </div>
+
+          <div>
+            <EmployeeCard/>
+          </div>
+        </div>
+      </div>
     </div>
   </>)
 }

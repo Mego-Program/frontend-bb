@@ -180,11 +180,7 @@ export default function Home() {
 
             </article>
 
-            <section className='w-full flex justify-center my-5'>
-                <div className='w-4/5'>
-                    <Section />
-                </div>
-            </section>
+            
         </div>
     </>)
 }
