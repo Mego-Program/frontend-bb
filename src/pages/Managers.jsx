@@ -1,6 +1,6 @@
 import React from 'react'
 import OurStory from '../OurStory'
-import EmployeeCard from '../EmployeeCard'
+import Employees from '../Employees'
 
 export default function Managers() {
   return (<>
@@ -57,17 +57,17 @@ export default function Managers() {
         style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
         <div className='w-4/5'>
           <div className='flex flex-row w-full h-[200px] space-x-4 '>
-            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
               <button className='w-full h-full'>
                 <h1>managers</h1>
               </button>
             </div>
-            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
               <button className='w-full h-full'>
                 <h1>participants</h1>
               </button>
             </div>
-            <div className="flex justify-center items-center w-1/3 lg:h-40 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
               <button className='w-full h-full'>
                 <h1>mentors</h1>
               </button>
@@ -77,8 +77,8 @@ export default function Managers() {
 
           <div className="w-full text-white text-base text-left font-light capitalize leading-10">
             <p>
-              we have become specialists at turning new ideas into viable products for our client’s organizations. 
-              Some of the more rewarding projects we have had the honour to be involved in, 
+              we have become specialists at turning new ideas into viable products for our client’s organizations.
+              Some of the more rewarding projects we have had the honour to be involved in,
               started with simple ideas and grew into profitable businesses
               from the ground up. <br /> It brings us great joy to see our clients gain market share in their industries through
               our web-based solutions.
@@ -86,7 +86,11 @@ export default function Managers() {
           </div>
 
           <div>
-            <EmployeeCard/>
+            <Employees />
+          </div>
+
+          <div className='text-white text-base my-5 font-light capitalize leading-10'>
+            <h3>we have become specialists at turning new ideas into viable products for our client’s organizations.</h3>
           </div>
         </div>
       </div>

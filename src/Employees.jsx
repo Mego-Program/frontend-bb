@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
+import EmployeeCard from './EmployeeCard';
 
 function Manager() {
     return (<>
+        <div className='flex flex-wrap w-full justify-center gap-5'>
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+        </div>
 
 
     </>);
@@ -9,7 +22,12 @@ function Manager() {
 
 function Participants() {
     return (<>
-
+        <div className="flex flex-wrap w-full justify-center  ">
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+        </div>
 
     </>);
 }
@@ -17,7 +35,8 @@ function Participants() {
 function Mentors() {
     return (<>
 
-
+        <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
+        <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
     </>);
 }
 
@@ -35,7 +54,6 @@ function Employees() {
             <button onClick={() => showComponent(<Mentors />)}>מורים</button>
 
             <div>
-                <h2>הקומפוננטה הנוכחית:</h2>
                 {currentComponent}
             </div>
         </div>
