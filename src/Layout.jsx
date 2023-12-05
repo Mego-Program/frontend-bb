@@ -1,9 +1,9 @@
 import React from 'react'
-import Nav from './Nav';
-import Footer from './Footer';
-import ScrollUpButton from './ScrollUpButton'
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import ScrollUpButton from './components/ScrollUpButton';
 import './App.css'
-import Section from './section';
+import Section from './components/Section';
 
 
 
