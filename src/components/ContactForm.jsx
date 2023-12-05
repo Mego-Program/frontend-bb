@@ -31,7 +31,7 @@ function ContactForm() {
                 <div className="flex flex-row gap-3 ">
 
                     <div className="flex flex-col w-1/2 ">
-                        <label className="w-full text-white text-xl font-light  capitalize leading-[34px]">
+                        <label className="w-full text-white text-xl font-light capitalize leading-[34px]">
 
                             <div className="">
                                 <h1>First Name:</h1>

@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 import CostumerComments from './CostumerComments'
 import ItemTag from './ItemTag'
 import { Link } from 'react-router-dom'

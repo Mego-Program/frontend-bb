@@ -1,6 +1,6 @@
 import '../App.css';
-import ComponentHeaderHome from '../ComponentHeaderHome';
-import Check from '../Check';
+import ComponentHeaderHome from '../components/ComponentHeaderHome';
+import Check from '../components/Check';
 import React, { useState, useEffect } from 'react';
 import { getHeroSection } from '../../cms-to-hero';
 

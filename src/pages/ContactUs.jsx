@@ -1,6 +1,6 @@
-import YellowButton from "../Yellowutton";
-import ContactForm from "../ContactForm";
-import HeroSection from "../HeroSection";
+import YellowButton from "../components/Yellowutton";
+import ContactForm from "../components/ContactForm";
+import HeroSection from "../components/HeroSection";
 import "../App.css";
 
 export default function ContactUs() {
@@ -8,7 +8,7 @@ export default function ContactUs() {
         <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
             smallTxt="Let's talk about your website or projects. Send us a message and we will bein touch within
             <br /> one business day" buttonTxt="Learn More" />
-        
+
         <div className='w-[100vw] h-[1830px] flex justify-center'
             style={{ backgroundImage: "url('little-witch-folded-notes 1.png')", }}>
             <div className=" w-4/5 flex lg:flex-row flex-col">
@@ -33,7 +33,6 @@ export default function ContactUs() {
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Haifa Office</h3>
                                 <p>some random address</p>
                             </div>
-                            <div className=""></div>
                         </div>
                     </div>
                     <div className='w-1/2 flex'>
@@ -42,11 +41,10 @@ export default function ContactUs() {
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5 mr-5">Send A Message</h3>
                                 <ContactForm />
                             </div>
-
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
 

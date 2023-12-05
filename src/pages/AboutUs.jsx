@@ -1,5 +1,5 @@
 // import React from "react"
-import Benefits from "../Benefits"
+import Benefits from "../components/Benefits"
 import { getHeroSection } from '../../cms-to-hero';
 import React, { useState, useEffect } from 'react';
 

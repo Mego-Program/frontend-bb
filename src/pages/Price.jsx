@@ -1,4 +1,4 @@
-import Entry from '../Entry';
+import Entry from "../components/Entry";
 // import Pricing from "../../listpricing";
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../../cms-to-plansPage';
