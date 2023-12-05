@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import ScrollUpButton from './ScrollUpButton'
 import './App.css'
+import Section from './section';
 
 
 
@@ -12,6 +13,7 @@ const Layout = ({ children }) => (
       <Nav />
       {children}
       <ScrollUpButton/>
+      <Section />
       <Footer />
     </div>
   );
