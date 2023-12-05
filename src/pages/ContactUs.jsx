@@ -2,8 +2,36 @@ import YellowButton from "../components/Yellowutton";
 import ContactForm from "../components/ContactForm";
 import HeroSection from "../components/HeroSection";
 import "../App.css";
+// Added by Yakov:
+import React, { useState, useEffect } from 'react';
+import { getContactInfo } from '../../cms-to-ourContactInfo';
+// End.
+
 
 export default function ContactUs() {
+
+    //  Added by Yakov:
+    const [phoneNumbers, setPhoneNumbers] = useState([]);
+    const [emails, setEmails] = useState([]);
+    const [addresses, setAddresses] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await getContactInfo();
+
+                setPhoneNumbers(data.map(info => info.phone_number));
+                setEmails(data.map(info => info.email));
+                setAddresses(data.map(info => info.address));
+            } catch (error) {
+                console.error('Error fetching contact data:', error);
+            }
+        }
+
+        fetchData();
+    }, []);
+    // End.
+
     return (<>
         <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
             smallTxt="Let's talk about your website or projects. Send us a message and we will bein touch within
@@ -20,10 +48,11 @@ export default function ContactUs() {
                                 <span className="text-amber-400 "> Touch</span>
                             </div>
                             <h4 className='text-lg font-normal my-10'>Let's talk about your website or projects.
-                               Send us a message and we will bein touch within <br /> one business day</h4>
+                                Send us a message and we will bein touch within <br /> one business day</h4>
                             <div className="text-[14px] font-normal my-1">
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Phone</h3>
-                                <p>+972 54 3978 738 <br />+972 54 8161 863 <br />+972 50 4156 575</p>
+                                <p>OurContactInfo<br />csdvsv
+                                    <br />+972 50 4156 575</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Email</h3>
                                 <p>info@colmandevclub.com <br />support@colmandevclub.com <br />admin@colmandevclub.com</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Bnei Brakq Office</h3>
