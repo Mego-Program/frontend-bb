@@ -1,3 +1,5 @@
+
+
 const Pricing = [
     {
       id: 1,
@@ -26,5 +28,5 @@ const Pricing = [
     }
   ];
   
-  export default Pricing;
+  // export default Pricing;
   

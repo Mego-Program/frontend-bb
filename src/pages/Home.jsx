@@ -1,10 +1,38 @@
-import '../App.css'
-import ComponentHeaderHome from '../ComponentHeaderHome'
-import Check from '../Check'
+import '../App.css';
+import ComponentHeaderHome from '../ComponentHeaderHome';
+import Check from '../Check';
+import React, { useState, useEffect } from 'react';
+import { getHeroSection } from '../../cms-to-hero';
 
 export default function Home() {
+    
+    const [heroSection, setHeroSection] = useState({}); 
+
+    useEffect(() => {
+        async function fetchData() {
+            const heroSecs = await getHeroSection();
+            // console.log(heroSec);
+            const myHero = {}
+            heroSecs.forEach((heroSec) => {
+                myHero[heroSec.title] = heroSec.description;
+            })
+            setHeroSection(myHero);
+
+            console.log({heroSecs})
+        }
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (heroSection) {
+            console.log(heroSection); 
+        }
+    }, [heroSection]);
+    
 
     return (<>
+
         <div className='w-[100vw] min-h-screen flex flex-col'>
             <div className='w-full  flex justify-center my-5 bg-gray-950'
                 style={{ backgroundImage: "url('Lines 1.png')" }}>
@@ -19,6 +47,7 @@ export default function Home() {
                                     <span>Club & learn<br />without limits</span>
                                 </div>
                                 <h4 className='text-lg font-normal'>Take your learning organisation to the next level</h4>
+        
                             </div>
 
                             <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">

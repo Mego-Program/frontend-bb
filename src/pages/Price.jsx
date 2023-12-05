@@ -1,31 +1,44 @@
-import React from 'react'
 import Entry from '../Entry';
-import Pricing from "../../listpricing";
+// import Pricing from "../../listpricing";
+import React, { useState, useEffect } from 'react';
+import { getPlansPage } from '../../cms-to-plansPage';
+
+
+export default function Price() {
+  
+    const [plansPage, setPlansPage] = useState([]) 
+
+useEffect(() => {
+    async function fetchData() {
+        const plPg = await getPlansPage();
+        setPlansPage(plPg);
+    }
+
+    fetchData();
+}, []);
+
+// useEffect(() => {
+//     if (plansPage) {
+//         console.log(plansPage); 
+//     }
+// }, [plansPage]);
 
 function createEntry(priceTerm) {
     return (
       <Entry
-        key={priceTerm.id}
-        type={priceTerm.titel}
-        name={priceTerm.price}
-        description={priceTerm.meaning}
+        key={priceTerm.title}
+        title={priceTerm.title}
+        price={priceTerm.thePrice}
+        description={priceTerm.text}
         btu={priceTerm.button}
       />
     );
   }
 
-export default function Price() {
-    return (<>
-        {/* <div className="bg-white ">Ido</div> */}
+    return (
         <div>
-            {/* <h1 >
-                <span>Pricing</span>
-            </h1> */}
-            <dl className="dictionary">{Pricing.map(createEntry)}</dl>
+            <dl className="dictionary">
+                {plansPage.map(createEntry)}</dl>
         </div>
-
-
-
-    </>
     )
 }
