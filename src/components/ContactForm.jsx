@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import YellowButton from "./Yellowutton";
 
+
 function ContactForm() {
-    // State variables to store form data
+    
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -11,18 +12,16 @@ function ContactForm() {
         message: "",
     });
 
-    // Function to handle changes in form fields
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // You can perform additional actions with the form data here
         console.log("Form Data:", formData);
     };
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -119,5 +118,6 @@ function ContactForm() {
         </form>
     );
 }
+
 
 export default ContactForm;
