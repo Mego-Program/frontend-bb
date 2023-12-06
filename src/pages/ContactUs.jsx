@@ -1,6 +1,7 @@
 import YellowButton from "../components/Yellowutton";
 import ContactForm from "../components/ContactForm";
 import HeroSection from "../components/HeroSection";
+import Directions from "../components/Directions";
 import "../App.css";
 
 export default function ContactUs() {
@@ -43,7 +44,7 @@ export default function ContactUs() {
                             </div>
                         </div>
                     </div>
-
+                    <Directions/>
                 </div>
             </div>
         </div>
