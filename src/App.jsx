@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import Managers from "./pages/Managers.jsx"
 import ContactUs from "./pages/ContactUs.jsx";
 import Price from "./pages/price.jsx";
+import Careers from "./pages/Careers.jsx";
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
           </Route>
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/price" element={<Price />} />
+          <Route path="/careers" element={<Careers />} />
+
 
 
         </Routes>

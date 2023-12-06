@@ -67,6 +67,16 @@ export default function Nav() {
                   Contact Us
                 </Link>
               </li>
+              <li className="hover:color-yellow">
+
+                <Link
+                  to="/careers"
+                  onClick={() => handleLinkClick(6)}
+                  className={getLinkClassName(6)}
+                >
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
 
