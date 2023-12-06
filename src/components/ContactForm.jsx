@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import YellowButton from "./Yellowutton";
-// Added by Yakov:
-// import { datoApiClient } from "../../datoApiClients"; // Make sure to import the API client
-// The end.
 
 
 function ContactForm() {
-    // State variables to store form data
+    
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -15,30 +12,16 @@ function ContactForm() {
         message: "",
     });
 
-    // Function to handle changes in form fields
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Changed by Yakov:// Function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // You can perform additional actions with the form data here
         console.log("Form Data:", formData);
     };
 
-    // Added by Yakov:
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         const response = await datoApiClient.createContact(formData);
-    //         console.log("Data saved to DatoCMS", response);
-    //     } catch (error) {
-    //         console.error("Error saving data to DatoCMS", error);
-    //     }
-    // };
-    // The end.
 
     return (
         <form onSubmit={handleSubmit}>

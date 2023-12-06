@@ -1,4 +1,3 @@
-// import YellowButton from "../components/Yellowutton";
 import ContactForm from "../components/ContactForm";
 import HeroSection from "../components/HeroSection";
 import "../App.css";
