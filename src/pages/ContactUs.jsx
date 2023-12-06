@@ -1,36 +1,16 @@
-import YellowButton from "../components/Yellowutton";
+// import YellowButton from "../components/Yellowutton";
 import ContactForm from "../components/ContactForm";
 import HeroSection from "../components/HeroSection";
 import "../App.css";
-// Added by Yakov:
 import React, { useState, useEffect } from 'react';
 import { getContactInfo } from '../../cms-to-ourContactInfo';
-// End.
-
 
 export default function ContactUs() {
-
-    //  Added by Yakov:
-    const [phoneNumbers, setPhoneNumbers] = useState([]);
-    const [emails, setEmails] = useState([]);
-    const [addresses, setAddresses] = useState([]);
+    const [contact, setContact] = useState({});
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const data = await getContactInfo();
-
-                setPhoneNumbers(data.map(info => info.phone_number));
-                setEmails(data.map(info => info.email));
-                setAddresses(data.map(info => info.address));
-            } catch (error) {
-                console.error('Error fetching contact data:', error);
-            }
-        }
-
-        fetchData();
+        getContactInfo().then(setContact).catch(console.error);
     }, []);
-    // End.
 
     return (<>
         <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
@@ -51,16 +31,15 @@ export default function ContactUs() {
                                 Send us a message and we will bein touch within <br /> one business day</h4>
                             <div className="text-[14px] font-normal my-1">
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Phone</h3>
-                                <p>OurContactInfo<br />csdvsv
-                                    <br />+972 50 4156 575</p>
+                                <p>{contact.phone1}<br />{contact.phone2}<br />{contact.phone3}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Email</h3>
-                                <p>info@colmandevclub.com <br />support@colmandevclub.com <br />admin@colmandevclub.com</p>
+                                <p>{contact.email} <br />{contact.email} <br />{contact.email}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Bnei Brakq Office</h3>
-                                <p>4, Yonathan st. BB, Israel</p>
+                                <p>{contact.address1}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Jerusalem Office</h3>
-                                <p>some random address</p>
+                                <p>{contact.address2}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Haifa Office</h3>
-                                <p>some random address</p>
+                                <p>{contact.address3}</p>
                             </div>
                         </div>
                     </div>
