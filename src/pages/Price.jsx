@@ -1,5 +1,4 @@
-import Entry from '../Entry';
-// import Pricing from "../../listpricing";
+import Entry from "../components/Entry";
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../../cms-to-plansPage';
 
@@ -17,11 +16,6 @@ useEffect(() => {
     fetchData();
 }, []);
 
-// useEffect(() => {
-//     if (plansPage) {
-//         console.log(plansPage); 
-//     }
-// }, [plansPage]);
 
 function createEntry(priceTerm) {
     return (
