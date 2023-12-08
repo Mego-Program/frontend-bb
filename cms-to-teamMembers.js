@@ -16,8 +16,8 @@ export async function getTeamMembers() {
             name: item.name,
             jtitle: item.jtitle,
             department: item.department,
-            sdescription: item.sdescription,
-            fdescription: item.fdescription
+            // sdescription: item.sdescription,
+            // fdescription: item.fdescription,
         }));
 
         console.log('Team Members:', teamMembers);
@@ -26,6 +26,8 @@ export async function getTeamMembers() {
         console.error('Error:', error);
     }
 }
+
+getTeamMembers();
 
 // async function getManagers() {
 //     try {
