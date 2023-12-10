@@ -11,15 +11,13 @@ export async function getTeamMembers() {
             },
         });
 
-        const teamMembers = items.map(item => ({
+        const teamMembers = items.map(item => {
+            console.log(item.picture, "Hello Sagi!")
+        return ({
             picture: item.picture,
             name: item.name,
             jtitle: item.jtitle,
-        //     department: item.department,
-        //     // sdescription: item.sdescription,
-        //     // fdescription: item.fdescription,
-        }));
-        // console.log(items);
+        })});
 
         console.log('Team Members:', teamMembers);
         return teamMembers;
