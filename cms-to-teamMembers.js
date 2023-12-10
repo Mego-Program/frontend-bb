@@ -8,17 +8,18 @@ export async function getTeamMembers() {
         const items = await client.items.all({
             filter: {
                 type: 'member',
-            }
+            },
         });
 
         const teamMembers = items.map(item => ({
             picture: item.picture,
             name: item.name,
             jtitle: item.jtitle,
-            department: item.department,
-            // sdescription: item.sdescription,
-            // fdescription: item.fdescription,
+        //     department: item.department,
+        //     // sdescription: item.sdescription,
+        //     // fdescription: item.fdescription,
         }));
+        // console.log(items);
 
         console.log('Team Members:', teamMembers);
         return teamMembers;
@@ -27,8 +28,7 @@ export async function getTeamMembers() {
     }
 }
 
-getTeamMembers();
-
+// getTeamMembers();
 // async function getManagers() {
 //     try {
 //         const items = await client.items.all({
