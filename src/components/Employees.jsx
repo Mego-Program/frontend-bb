@@ -1,9 +1,7 @@
 import EmployeeCard from './EmployeeCard';
-// Added by Yakov:
 import React, { useState, useEffect } from 'react';
-import { getTeamMembers, getDetailes } from '../../cms-to-teamMembers';
+import { getTeamMembers } from '../../cms-to-teamMembers';
 
-// End.
 
 
 export default function Employees() {
@@ -13,15 +11,6 @@ export default function Employees() {
         async function fetchTeamMembers() {
             const members = await getTeamMembers();
             setTeamMembers(members);
-        }
-        
-        fetchTeamMembers();
-    }, []);
-
-    useEffect(() => {
-        async function fetchTeamMembers() {
-            const members = await getDetailes();
-            // setTeamMembers(members);
         }
         
         fetchTeamMembers();
@@ -43,6 +32,7 @@ export default function Employees() {
     </>);
 }
 
+// Yonatan's models:
 {/* <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
             <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
             <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />

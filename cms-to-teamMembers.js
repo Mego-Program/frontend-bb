@@ -14,13 +14,15 @@ export async function getTeamMembers() {
                 type: 'member',
             },
         });
-
-        const teamMembers = items.map(item => {
-        return ({
-            picture: item.picture,
-            name: item.name,
-            jtitle: item.jtitle,
-        })});
+        const teamMembers = [];
+        for (let item of items) {
+            let imageData = await getImageData(item.picture?.uploadId);
+            teamMembers.push({
+                picture: imageData?.url,
+                name: item.name,
+                jtitle: item.jtitle,
+            })
+        }
 
         console.log('Team Members:', teamMembers);
         return teamMembers;
@@ -28,20 +30,20 @@ export async function getTeamMembers() {
         console.error('Error:', error);
     }
 }
-// getTeamMembers();
 
-export async function getDetailes() {
+export async function getImageData(uploadId) {
     try {
-        const members = await getTeamMembers();
-        const details = await client.uploads.find(members[1].picture.uploadId)
-        console.log(details);
+        const imageData = await client.uploads.find(uploadId);
+        if (imageData && imageData.url) {
+            return await imageData;
+        }
+
     } catch (error) {
-        
+        console.log('error', error);
     }
 
 }
 
-getDetailes();
 
 
 
