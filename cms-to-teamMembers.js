@@ -1,6 +1,10 @@
-import { SiteClient } from 'datocms-client';
+// import { SiteClient } from 'datocms-client';
+// const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
 
-const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
+import { buildClient } from 'datocms-@datocms/cma-client-node';
+const client = new buildClient({ 
+    apiToken: 'b3d15d163318321dd591d7733a32ee',
+});
 
 
 export async function getTeamMembers() {
@@ -12,7 +16,6 @@ export async function getTeamMembers() {
         });
 
         const teamMembers = items.map(item => {
-            console.log(item.picture, "Hello Sagi!")
         return ({
             picture: item.picture,
             name: item.name,
@@ -26,35 +29,7 @@ export async function getTeamMembers() {
     }
 }
 
-// getTeamMembers();
-// async function getManagers() {
-//     try {
-//         const items = await client.items.all({
-//             filter: {
-//                 type: 'team_member',
-//                 fields: {
-//                     department: {
-//                         eq: 'Managers'
-//                     }
-//                 }
-//             }
-//         });
 
-//         const teamMembers = items.map(item => ({
-//             picture: item.picture,
-//             name: item.name,
-//             jobTitle: item.jobTitle,
-//             department: item.department,
-//             short_description: item.shortDescription,
-//             full_description: item.fullDescription
-//         }));
-
-//         console.log('Team Members:', teamMembers);
-//         return teamMembers;
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
 
 
 
