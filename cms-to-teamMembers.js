@@ -1,10 +1,10 @@
-// import { SiteClient } from 'datocms-client';
-// const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
+import { SiteClient } from 'datocms-client';
+const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
 
-import { buildClient } from 'datocms-@datocms/cma-client-node';
-const client = new buildClient({ 
-    apiToken: 'b3d15d163318321dd591d7733a32ee',
-});
+// import { buildClient } from 'datocms-@datocms/cma-client-node';
+// const client = new buildClient({ 
+//     apiToken: 'b3d15d163318321dd591d7733a32ee',
+// });
 
 
 export async function getTeamMembers() {
@@ -28,7 +28,20 @@ export async function getTeamMembers() {
         console.error('Error:', error);
     }
 }
+// getTeamMembers();
 
+export async function getDetailes() {
+    try {
+        const members = await getTeamMembers();
+        const details = await client.uploads.find(members[1].picture.uploadId)
+        console.log(details);
+    } catch (error) {
+        
+    }
+
+}
+
+getDetailes();
 
 
 
