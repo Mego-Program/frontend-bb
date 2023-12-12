@@ -23,11 +23,9 @@ function ContactForm() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    };
-
     try {
         const record = await client.items.create({
-            itemType: 'client',
+            itemType: 'fqN6Cg0rRGmc1MlsmsAeyg',
             firstName: formData.fname,
             lastName: formData.lname,
             emailAddress: formData.email,
@@ -36,13 +34,10 @@ function ContactForm() {
         });
 
         console.log('Record created:', record);
-        // Here you can handle post-submit actions, e.g., clear the form, display a success message, etc.
     } catch (error) {
         console.error('Error sending data to DatoCMS', error);
-        // Handle the submission error, e.g., display an error message to the user
     }
 };
-
 
 return (
     <form onSubmit={handleSubmit}>
@@ -66,7 +61,6 @@ return (
                             />
                         </div>
 
-
                     </label>
                 </div>
 
@@ -85,7 +79,6 @@ return (
                                 onChange={handleInputChange}
                             />
                         </div>
-
 
                     </label>
                 </div>
@@ -117,8 +110,6 @@ return (
                     />
                 </label>
             </div>
-
-
 
             <div className="mt-7">
                 <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
