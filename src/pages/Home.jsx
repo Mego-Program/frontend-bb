@@ -34,7 +34,7 @@ export default function Home() {
     return (<>
 
         <div className='w-[100vw] min-h-screen flex flex-col'>
-            <div className='w-full  flex justify-center my-5 bg-gray-950'
+            <div className='w-full  flex justify-center mb-5 bg-gray-950'
                 style={{ backgroundImage: "url('Lines 1.png')" }}>
                 <div className=' w-4/5'>
                     <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
@@ -110,7 +110,7 @@ export default function Home() {
                                         learning</span> journey</span>
                                 </div>
 
-                                <div className=' flex flex-row lg:flex-col flex-wrap w-full h-2/3 '>
+                                <div className=' flex flex-row flex-wrap w-full h-2/3 '>
                                     <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5  '>
                                         <div><span className='text-amber-400'>1</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Create Account</h2>

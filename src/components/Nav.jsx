@@ -85,8 +85,8 @@ export default function Nav() {
               <li className=" w-32 hover:color-yellow items-end">
                 <a
                   href="#SignIn"
-                  onClick={() => handleLinkClick(6)}
-                  className={getLinkClassName(6)}
+                  onClick={() => handleLinkClick(7)}
+                  className={getLinkClassName(7)}
                 >
                   Sign In
                 </a>
