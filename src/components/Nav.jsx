@@ -67,6 +67,16 @@ export default function Nav() {
                   Contact Us
                 </Link>
               </li>
+              <li className="hover:color-yellow">
+
+                <Link
+                  to="/careers"
+                  onClick={() => handleLinkClick(6)}
+                  className={getLinkClassName(6)}
+                >
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -75,8 +85,8 @@ export default function Nav() {
               <li className=" w-32 hover:color-yellow items-end">
                 <a
                   href="#SignIn"
-                  onClick={() => handleLinkClick(6)}
-                  className={getLinkClassName(6)}
+                  onClick={() => handleLinkClick(7)}
+                  className={getLinkClassName(7)}
                 >
                   Sign In
                 </a>

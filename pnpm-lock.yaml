@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@datocms/cma-client-browser':
+    specifier: ^3.0.9
+    version: 3.0.9
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
@@ -314,6 +317,26 @@ packages:
   /@contentful/rich-text-types@14.1.2:
     resolution: {integrity: sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ==}
     engines: {node: '>=6.0.0'}
+    dev: false
+
+  /@datocms/cma-client-browser@3.0.9:
+    resolution: {integrity: sha512-RgYemanXuihgDP+MxCB6fciZHUOP1x4lpOFfqIF3AxprBjiZ6pYc5eQfpV93hvGXyo96kuc2nnZyn2ikpwQ13g==}
+    dependencies:
+      '@datocms/cma-client': 3.0.9
+      '@datocms/rest-client-utils': 3.0.5
+    dev: false
+
+  /@datocms/cma-client@3.0.9:
+    resolution: {integrity: sha512-O2wzqRdVKd2sQUzbSdUkB1F8hRjBhaVTLEpputiq2k9b+XoBZBgCj+feos2yODI/e4JUUZnFBwFME6Y702yG+w==}
+    dependencies:
+      '@datocms/rest-client-utils': 3.0.5
+      uuid: 9.0.1
+    dev: false
+
+  /@datocms/rest-client-utils@3.0.5:
+    resolution: {integrity: sha512-BoyfQ8vT8X84V8x0MKuM8SXwUh+Vi3Xd1bJg7rDExsfGIEYaNVoDlAXnuJNMsX5Y/d2oZRPdQdpb4n4YQ4GfLA==}
+    dependencies:
+      async-scheduler: 1.4.4
     dev: false
 
   /@esbuild/android-arm64@0.18.20:
@@ -898,6 +921,10 @@ packages:
   /assert-plus@1.0.0:
     resolution: {integrity: sha512-NfJ4UzBCcQGLDlQq7nHxH+tv3kyZ0hHQqF5BO6J7tNJeP5do1llPr8dZ8zHonfhAu0PHAdMkSo+8o0wxg9lZWw==}
     engines: {node: '>=0.8'}
+    dev: false
+
+  /async-scheduler@1.4.4:
+    resolution: {integrity: sha512-KVWlF6WKlUGJA8FOJYVVk7xDm3PxITWXp9hTeDsXMtUPvItQ2x6g2rIeNAa0TtAiiWvHJqhyA3wo+pj0rA7Ldg==}
     dev: false
 
   /asynciterator.prototype@1.0.0:
@@ -3824,6 +3851,11 @@ packages:
   /uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
+    dev: false
+
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
     dev: false
 
