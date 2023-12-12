@@ -1,5 +1,6 @@
 import ContactForm from "../components/ContactForm";
 import HeroSection from "../components/HeroSection";
+import Directions from "../components/Directions";
 import "../App.css";
 import React, { useState, useEffect } from 'react';
 import { getContactInfo } from '../../cms-to-ourContactInfo';
@@ -50,7 +51,7 @@ export default function ContactUs() {
                             </div>
                         </div>
                     </div>
-
+                    <Directions/>
                 </div>
             </div>
         </div>
