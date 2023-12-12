@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../../cms-to-plansPage';
 import HeroSection from '../HeroSection';
+import Entry from '../components/Entry';
 
 export default function Price() {
   
