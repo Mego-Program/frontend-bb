@@ -18,18 +18,7 @@ export default function Employees() {
 
     return (<>
         <div className='flex flex-wrap w-full justify-center gap-5'>
-<<<<<<< HEAD
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-1.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-3.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-1.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-3.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-1.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-3.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-1.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-3.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-1.png' />
-            <EmployeeCard Name='Yonatan' Role='Frontend Developer' srcImg='yonatan-3.png' />
-=======
+
         {teamMembers.map(member => (
                 <EmployeeCard 
                     key={member.name} 
@@ -38,7 +27,6 @@ export default function Employees() {
                     srcImg={member.picture} // Make sure to use the correct property for the image URL
                 />
             ))}
->>>>>>> 951fa4ac84064999b3dda471cdd72fb509079b52
             
         </div>
 
