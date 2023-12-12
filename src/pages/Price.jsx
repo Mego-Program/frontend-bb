@@ -1,4 +1,3 @@
-import Entry from '../Entry';
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../../cms-to-plansPage';
 import HeroSection from '../HeroSection';

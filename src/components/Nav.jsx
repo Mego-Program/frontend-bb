@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "../App.css"; //?
 import BurgerButton from "./BurgerButton";
 import { Link } from "react-router-dom";
 
@@ -65,6 +65,16 @@ export default function Nav() {
                   className={getLinkClassName(5)}
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li className="hover:color-yellow">
+
+                <Link
+                  to="/careers"
+                  onClick={() => handleLinkClick(6)}
+                  className={getLinkClassName(6)}
+                >
+                  Careers
                 </Link>
               </li>
             </ul>

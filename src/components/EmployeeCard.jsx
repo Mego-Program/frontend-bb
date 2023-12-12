@@ -6,7 +6,7 @@ export default function EmployeeCard(props) {
         <div className="flex flex-col items-center pt-6 w-44 h-72 bg-slate-950 rounded-lg border border-amber-400 relative">
             <div className="w-20 h-20">
                 <div className="w-full h-full rounded-[50%] border-2 border-white">
-                    <img className="w-full h-full" src={props.srcImg} alt="" />
+                    <img className="w-full h-full rounded-[50%]"  src={props.srcImg} alt={props.Name} />
                 </div>
             </div>
             <div className="text-center mt-4">

@@ -1,6 +1,6 @@
 import React from 'react'
-import OurStory from '../OurStory'
-import Employees from '../Employees'
+import OurStory from '../components/OurStory'
+import Employees from '../components/Employees'
 
 export default function Managers() {
   return (<>

@@ -1,14 +1,21 @@
-import YellowButton from "../Yellowutton";
-import ContactForm from "../ContactForm";
-import HeroSection from "../HeroSection";
+import ContactForm from "../components/ContactForm";
+import HeroSection from "../components/HeroSection";
 import "../App.css";
+import React, { useState, useEffect } from 'react';
+import { getContactInfo } from '../../cms-to-ourContactInfo';
 
 export default function ContactUs() {
+    const [contact, setContact] = useState({});
+
+    useEffect(() => {
+        getContactInfo().then(setContact).catch(console.error);
+    }, []);
+
     return (<>
         <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
             smallTxt="Let's talk about your website or projects. Send us a message and we will bein touch within
             <br /> one business day" buttonTxt="Learn More" />
-        
+
         <div className='w-[100vw] h-[1830px] flex justify-center'
             style={{ backgroundImage: "url('little-witch-folded-notes 1.png')", }}>
             <div className=" w-4/5 flex lg:flex-row flex-col">
@@ -23,17 +30,16 @@ export default function ContactUs() {
                                 Send us a message and we will bein touch within <br /> one business day</h4>
                             <div className="text-[14px] font-normal my-1">
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Phone</h3>
-                                <p>+972 54 3978 738 <br />+972 54 8161 863 <br />+972 50 4156 575</p>
+                                <p>{contact.phone1}<br />{contact.phone2}<br />{contact.phone3}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Email</h3>
-                                <p>info@colmandevclub.com <br />support@colmandevclub.com <br />admin@colmandevclub.com</p>
+                                <p>{contact.email} <br />{contact.email} <br />{contact.email}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Bnei Brakq Office</h3>
-                                <p>4, Yonathan st. BB, Israel</p>
+                                <p>{contact.address1}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Jerusalem Office</h3>
-                                <p>some random address</p>
+                                <p>{contact.address2}</p>
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Haifa Office</h3>
-                                <p>some random address</p>
+                                <p>{contact.address3}</p>
                             </div>
-                            <div className=""></div>
                         </div>
                     </div>
                     <div className='w-1/2 flex'>
@@ -42,11 +48,10 @@ export default function ContactUs() {
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5 mr-5">Send A Message</h3>
                                 <ContactForm />
                             </div>
-
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
 

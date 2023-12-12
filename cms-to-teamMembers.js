@@ -1,27 +1,28 @@
 import { SiteClient } from 'datocms-client';
+const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
 
-const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
+// import { buildClient } from 'datocms-@datocms/cma-client-node';
+// const client = new buildClient({ 
+//     apiToken: 'b3d15d163318321dd591d7733a32ee',
+// });
 
-// Team Members.
-async function getTeamMembers() {
+
+export async function getTeamMembers() {
     try {
         const items = await client.items.all({
             filter: {
-                type: 'team_member',
-                fields: {
-
-                }
-            }
+                type: 'member',
+            },
         });
-
-        const teamMembers = items.map(item => ({
-            picture: item.picture,
-            name: item.name,
-            jobTitle: item.jobTitle,
-            department: item.department,
-            short_description: item.shortDescription,
-            full_description: item.fullDescription
-        }));
+        const teamMembers = [];
+        for (let item of items) {
+            let imageData = await getImageData(item.picture?.uploadId);
+            teamMembers.push({
+                picture: imageData?.url,
+                name: item.name,
+                jtitle: item.jtitle,
+            })
+        }
 
         console.log('Team Members:', teamMembers);
         return teamMembers;
@@ -30,102 +31,24 @@ async function getTeamMembers() {
     }
 }
 
-// 
-async function getManagers() {
+export async function getImageData(uploadId) {
     try {
-        const items = await client.items.all({
-            filter: {
-                type: 'team_member',
-                fields: {
-                    department: {
-                        eq: 'Managers'
-                    }
-                }
-            }
-        });
+        const imageData = await client.uploads.find(uploadId);
+        if (imageData && imageData.url) {
+            return await imageData;
+        }
 
-        const teamMembers = items.map(item => ({
-            picture: item.picture,
-            name: item.name,
-            jobTitle: item.jobTitle,
-            department: item.department,
-            short_description: item.shortDescription,
-            full_description: item.fullDescription
-        }));
-
-        console.log('Team Members:', teamMembers);
-        return teamMembers;
     } catch (error) {
-        console.error('Error:', error);
+        console.log('error', error);
     }
-}
 
-
-// Getting Marketing team members.
-async function getMarketing() {
-    try {
-        const items = await client.items.all({
-            filter: {
-                type: 'team_member',
-                fields: {
-                    department: {
-                        eq: 'Marketing'
-                    }
-                }
-            }
-        });
-
-        const getMarketing = items.map(item => ({
-            picture: item.picture,
-            name: item.name,
-            jobTitle: item.jobTitle,
-            department: item.department,
-            short_description: item.shortDescription,
-            full_description: item.fullDescription
-        }));
-
-        console.log('Team Members:', getMarketing);
-        return getMarketing;
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-
-// Getting Mentors department.
-async function getMentors() {
-    try {
-        const items = await client.items.all({
-            filter: {
-                type: 'team_member',
-                fields: {
-                    department: {
-                        eq: 'Mentors'
-                    }
-                }
-            }
-        });
-
-        const getMentors = items.map(item => ({
-            picture: item.picture,
-            name: item.name,
-            jobTitle: item.jobTitle,
-            department: item.department,
-            short_description: item.shortDescription,
-            full_description: item.fullDescription
-        }));
-
-        console.log('Team Members:', getMentors);
-        return getMentors;
-    } catch (error) {
-        console.error('Error:', error);
-    }
 }
 
 
 
 
 
- 
+
+
 
 
