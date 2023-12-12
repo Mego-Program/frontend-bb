@@ -12,8 +12,7 @@ function JobAccordion({ job, isOpen, onClick }) {
   
     return (
       <div
-        className="w-full p-2 border border-gray-300 rounded bg-white mb-2"
-        ref={jobRef}
+      className="text-amber-400 w-full p-2 border-t-2 border-amber-400 rounded "        ref={jobRef}
         style={{
           height: isOpen ? "auto" : "50px", // Set a minimum height, adjust as needed
           overflow: "hidden",
@@ -24,7 +23,7 @@ function JobAccordion({ job, isOpen, onClick }) {
       >
         <strong className="text-center block">{job.title}</strong>
         {isOpen && (
-          <p className="text-center block" style={{ margin: "10px 0" }}>
+          <p className="text-white text-center block" style={{ margin: "10px 0" }}>
             {job.details}
           </p>
         )}
@@ -64,23 +63,31 @@ function JobAccordion({ job, isOpen, onClick }) {
   
     return (
       <>
+      <div className="h-[550px]">
         <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
             smallTxt="Let's talk about your website or projects. Send us a message and we will bein touch within
             <br /> one business day" buttonTxt="Learn More" />
+            </div>
+        <div className="w-60 h-12 bg-amber-400 mx-auto block rounded mb-20 relative">
+        <img
+          src="..\public\magnifying_glass_icon.png"
+          alt="placeholder"
+          className="absolute top-2 left-3 w-8 h-8 object-cover"
+        />
         <input
-                className="mx-auto text-center block h-18 w-4/5 p-2 border border-gray-300 rounded mb-20 justify-center"
-                type="text"
-                placeholder="חיפוש משרות"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-        <div
-          className="w-full h-[500px] overflow-y-auto flex justify-center"
-          style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}
-        >
-          <div className=" w-4/5 flex lg:flex-row flex-col">
+          className="rounded w-full h-full pl-10 bg-amber-400 text-center placeholder-black"
+          type="text"
+          placeholder="חיפוש משרה"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+    </div>
+
+    <div
+    className="w-3/5 h-[500px] overflow-y-auto flex justify-center mb-[100px] mx-auto">
+          <div className=" w-full flex lg:flex-row flex-col">
             <div className="w-full h-20 p-4">
-              
+
               {filteredJobs.map((job, index) => (
                 <JobAccordion
                   key={job.id}
