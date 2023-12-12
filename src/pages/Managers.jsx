@@ -1,6 +1,8 @@
 import React from 'react'
 import OurStory from '../components/OurStory'
 import Employees from '../components/Employees'
+import ManagerLayout from '../components/ManagerLayout'
+import { Outlet } from 'react-router-dom'
 
 export default function Managers() {
   return (<>
@@ -74,6 +76,10 @@ export default function Managers() {
             </div>
           </div>
 
+          <div>
+            <ManagerLayout />
+          </div>
+
 
           <div className="w-full text-white text-base text-left font-light capitalize leading-10">
             <p>
@@ -86,7 +92,7 @@ export default function Managers() {
           </div>
 
           <div>
-            <Employees />
+            <Outlet />
           </div>
 
           <div className='text-white text-base my-5 font-light capitalize leading-10'>
