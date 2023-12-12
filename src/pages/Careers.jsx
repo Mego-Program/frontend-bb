@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/HeroSection";
 import { getCareers } from '../../cms-to-careers';
 
-
-
+//  These blocks were created by Ary:
 // const jobListingsData = [
 //   { id: 1, title: "מהנדס פיתוח תוכנה", details: "מגוון משרות למהנדסי פיתוח תוכנה עם ניסיון בפיתוח בשפות כמו Java, C++, Python ועוד. המשרות כוללות פיתוח בצוותים גדולים ועבודה עם טכנולוגיות חדשות." },
 //   { id: 2, title: "מעצב UI/UX", details: "הזדמנות לעבוד כמעצב UI/UX בחברת ניסיון ולקחת חלק בעיצוב ופיתוח של ממשקים משתמשים. התפקיד כולל יצירת עיצובים מרהיבים ובדיקת ממשקי משתמש." },
@@ -24,7 +23,6 @@ import { getCareers } from '../../cms-to-careers';
 // { id: 18, title: "מפתחת Java", details: "פיתוח בשפת Java עם יכולת להתמודד עם פרויקטים מורכבים ומערכות גדולות." },
 // { id: 19, title: "מהנדס נתונים", details: "עיבוד, ניתוח והפקת דוחות ממערכות מקורות נתונים שונים." },
 // { id: 20, title: "מנהלת פרויקט", details: "ניהול פרויקטים טכנולוגיים עם יכולת ללוות את הצוות להצלחה." },
-
 // ];
 
 
@@ -81,9 +79,12 @@ function JobAccordion({ job, isOpen, onClick }) {
       job.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   
-    const handleJobClick = (index) => {
-      setOpenJobIndex(index === openJobIndex ? null : index);
+    const handleJobClick = (jobId) => {
+      const jobIndex = jobListings.findIndex(job => job.id === jobId);
+      console.log('Job clicked: ', jobIndex);
+      setOpenJobIndex(jobIndex === openJobIndex ? null : jobIndex);
     };
+    
   
     return (
       <>
@@ -108,8 +109,8 @@ function JobAccordion({ job, isOpen, onClick }) {
                 <JobAccordion
                   key={job.id}
                   job={job}
-                  isOpen={index === openJobIndex}
-                  onClick={() => handleJobClick(index)}
+                  isOpen={job.id === jobListings[openJobIndex]?.id}
+                  onClick={() => handleJobClick(job.id)}
                 />
               ))}
             </div>
