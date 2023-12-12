@@ -27,7 +27,7 @@ export default function ContactUs() {
                                 <span className="text-amber-400 "> Touch</span>
                             </div>
                             <h4 className='text-lg font-normal my-10'>Let's talk about your website or projects.
-                                Send us a message and we will bein touch within <br /> one business day</h4>
+                               <br /> Send us a message, and we will bein touch <br />within one business day.</h4>
                             <div className="text-[14px] font-normal my-1">
                                 <h3 className="text-[28px] font-bold text-amber-400 my-5">Phone</h3>
                                 <p>{contact.phone1}<br />{contact.phone2}<br />{contact.phone3}</p>

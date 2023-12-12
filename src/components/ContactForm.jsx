@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import YellowButton from "./Yellowutton";
+import { SiteClient } from 'datocms-client';
 
 
 function ContactForm() {
-    
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -17,106 +18,126 @@ function ContactForm() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (event) => {
+    const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
+
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Form Data:", formData);
     };
 
+    try {
+        const record = await client.items.create({
+            itemType: 'client',
+            firstName: formData.fname,
+            lastName: formData.lname,
+            emailAddress: formData.email,
+            phoneNumber: formData.phone,
+            message: formData.message,
+        });
 
-    return (
-        <form onSubmit={handleSubmit}>
-
-            <div className="flex-col">
-                <div className="flex flex-row gap-3 ">
-
-                    <div className="flex flex-col w-1/2 ">
-                        <label className="w-full text-white text-xl font-light capitalize leading-[34px]">
-
-                            <div className="">
-                                <h1>First Name:</h1>
-                            </div>
-                            <div className="">
-                                <input className="w-full h-[55px] pl-5 bg-slate-950 rounded-[10px] border border-indigo-950"
-                                    type="text"
-                                    name="firstName"
-                                    placeholder="firstName"
-                                    value={formData.firstName}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
+        console.log('Record created:', record);
+        // Here you can handle post-submit actions, e.g., clear the form, display a success message, etc.
+    } catch (error) {
+        console.error('Error sending data to DatoCMS', error);
+        // Handle the submission error, e.g., display an error message to the user
+    }
+};
 
 
-                        </label>
-                    </div>
+return (
+    <form onSubmit={handleSubmit}>
 
-                    <div className="flex flex-col w-1/2">
-                        <label className="w-full text-white text-xl font-light capitalize leading-[34px]">
+        <div className="flex-col">
+            <div className="flex flex-row gap-3 ">
 
-                            <div className="">
-                                <h1>Last Name:</h1>
-                            </div>
-                            <div className="">
-                                <input className="w-full h-[55px] pl-5 bg-slate-950 rounded-[10px] border border-indigo-950"
-                                    type="text"
-                                    name="lastName"
-                                    placeholder="Type Your Last Name"
-                                    value={formData.lastName}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
+                <div className="flex flex-col w-1/2 ">
+                    <label className="w-full text-white text-xl font-light capitalize leading-[34px]">
+
+                        <div className="">
+                            <h1>First Name:</h1>
+                        </div>
+                        <div className="">
+                            <input className="w-full h-[55px] pl-5 bg-slate-950 rounded-[10px] border border-indigo-950"
+                                type="text"
+                                name="firstName"
+                                placeholder="firstName"
+                                value={formData.firstName}
+                                onChange={handleInputChange}
+                            />
+                        </div>
 
 
-                        </label>
-                    </div>
-
-                </div>
-
-                <div className="mt-7">
-                    <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
-                        Email:
-                        <input className="w-full h-[55px] pl-5 flex justify-center bg-slate-950 rounded-[10px] border border-indigo-950"
-                            type="email"
-                            name="emailAddress"
-                            placeholder="Type Your Email"
-                            value={formData.emailAddress}
-                            onChange={handleInputChange}
-                        />
                     </label>
                 </div>
 
-                <div className="mt-7">
-                    <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
-                        Phone Number:
-                        <input className="w-full h-[55px] pl-5 flex justify-center bg-slate-950 rounded-[10px] border border-indigo-950"
-                            type="tel"
-                            name="phoneNumber"
-                            placeholder="Enter Your Phone Number"
-                            value={formData.phoneNumber}
-                            onChange={handleInputChange}
-                        />
+                <div className="flex flex-col w-1/2">
+                    <label className="w-full text-white text-xl font-light capitalize leading-[34px]">
+
+                        <div className="">
+                            <h1>Last Name:</h1>
+                        </div>
+                        <div className="">
+                            <input className="w-full h-[55px] pl-5 bg-slate-950 rounded-[10px] border border-indigo-950"
+                                type="text"
+                                name="lastName"
+                                placeholder="Type Your Last Name"
+                                value={formData.lastName}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+
+
                     </label>
                 </div>
 
-
-
-                <div className="mt-7">
-                    <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
-                        Message:
-                        <textarea className="w-full h-[121px] pl-5 pt-3 bg-slate-950 rounded-[10px] border border-indigo-950"
-                            name="message"
-                            placeholder="Your Message"
-                            value={formData.message}
-                            onChange={handleInputChange}
-                        />
-                    </label>
-                </div>
-
-                <div className="mt-7">
-                    <YellowButton txt="Send" />
-                </div>
             </div>
-        </form>
-    );
+
+            <div className="mt-7">
+                <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
+                    Email:
+                    <input className="w-full h-[55px] pl-5 flex justify-center bg-slate-950 rounded-[10px] border border-indigo-950"
+                        type="email"
+                        name="emailAddress"
+                        placeholder="Type Your Email"
+                        value={formData.emailAddress}
+                        onChange={handleInputChange}
+                    />
+                </label>
+            </div>
+
+            <div className="mt-7">
+                <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
+                    Phone Number:
+                    <input className="w-full h-[55px] pl-5 flex justify-center bg-slate-950 rounded-[10px] border border-indigo-950"
+                        type="tel"
+                        name="phoneNumber"
+                        placeholder="Enter Your Phone Number"
+                        value={formData.phoneNumber}
+                        onChange={handleInputChange}
+                    />
+                </label>
+            </div>
+
+
+
+            <div className="mt-7">
+                <label className="text-white text-xl font-light font-['Poppins'] capitalize leading-[34px]">
+                    Message:
+                    <textarea className="w-full h-[121px] pl-5 pt-3 bg-slate-950 rounded-[10px] border border-indigo-950"
+                        name="message"
+                        placeholder="Your Message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                    />
+                </label>
+            </div>
+
+            <div className="mt-7">
+                <YellowButton txt="Send" />
+            </div>
+        </div>
+    </form>
+);
 }
 
 
