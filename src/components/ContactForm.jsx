@@ -26,11 +26,11 @@ function ContactForm() {
     try {
         const record = await client.items.create({
             itemType: 'fqN6Cg0rRGmc1MlsmsAeyg',
-            firstName: formData.fname,
-            lastName: formData.lname,
-            emailAddress: formData.email,
-            phoneNumber: formData.phone,
-            m: formData.message,
+            fname: formData.firstName,
+            lname: formData.lastName,
+            email: formData.emailAddress,
+            phone: formData.phoneNumber,
+            message: formData.message,
         });
 
         console.log('Record created:', record);
