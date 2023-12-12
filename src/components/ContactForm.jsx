@@ -30,7 +30,7 @@ function ContactForm() {
             lastName: formData.lname,
             emailAddress: formData.email,
             phoneNumber: formData.phone,
-            message: formData.message,
+            m: formData.message,
         });
 
         console.log('Record created:', record);
@@ -129,7 +129,7 @@ return (
         </div>
     </form>
 );
-}
+};
 
 
 export default ContactForm;
