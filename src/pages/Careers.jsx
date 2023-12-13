@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/HeroSection";
 import { getCareers } from '../../cms-to-careers';
+import { getHeroSection } from '../../cms-to-hero';
 
 
 function JobAccordion({ job, isOpen, onClick }) {
@@ -36,6 +37,7 @@ function JobAccordion({ job, isOpen, onClick }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [openJobIndex, setOpenJobIndex] = useState(null);
     const [jobListings, setJobListings] = useState([]);
+    const [heroSection, setHeroSection] = useState({});
 
     useEffect(() => {
       const fetchCareers = async () => {
@@ -50,6 +52,12 @@ function JobAccordion({ job, isOpen, onClick }) {
       fetchCareers();
     }, []);
 
+    useEffect(() => {
+      getHeroSection('Careers')
+        .then(setHeroSection)
+        .catch(console.error);
+    }, []);
+
     const filteredJobs = jobListings.filter((job) =>
       job.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -60,13 +68,15 @@ function JobAccordion({ job, isOpen, onClick }) {
       setOpenJobIndex(jobIndex === openJobIndex ? null : jobIndex);
     };
     
-  
     return (
       <>
       <div className="h-[550px]">
-        <HeroSection firstTxt="We'd" yellowTxt=" love to hear" lastTxt=" from you"
-            smallTxt="Let's talk about your website or projects. Send us a message and we will bein touch within
-            <br /> one business day" buttonTxt="Learn More" />
+        <HeroSection 
+            firstTxt={heroSection.desc1}
+            yellowTxt={heroSection.desc2} 
+            lastTxt={heroSection.desc3}
+            smallTxt={heroSection.desc4}
+            buttonTxt={heroSection.button} />
             </div>
         <div className="w-60 h-12 bg-amber-400 mx-auto block rounded mb-20 relative">
         <img
