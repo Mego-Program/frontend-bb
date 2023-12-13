@@ -5,31 +5,12 @@ import React, { useState, useEffect } from 'react';
 import { getHeroSection } from '../../cms-to-hero';
 
 export default function Home() {
-    
-    const [heroSection, setHeroSection] = useState({}); 
+    const [heroSection, setHeroSection] = useState({});
 
     useEffect(() => {
-        async function fetchData() {
-            const heroSecs = await getHeroSection();
-            // console.log(heroSec);
-            const myHero = {}
-            heroSecs.forEach((heroSec) => {
-                myHero[heroSec.title] = heroSec.description;
-            })
-            setHeroSection(myHero);
-
-            console.log({heroSecs})
-        }
-
-        fetchData();
+        getHeroSection().then(setHeroSection).catch(console.error);
     }, []);
 
-    useEffect(() => {
-        if (heroSection) {
-            console.log(heroSection); 
-        }
-    }, [heroSection]);
-    
 
     return (<>
 
@@ -42,16 +23,16 @@ export default function Home() {
                             <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                                 <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                                 <div className='my-2'>
-                                    <span>Let's build skills with<br />Colman</span>
-                                    <span className="text-amber-400 ">Dev</span>
-                                    <span>Club & learn<br />without limits</span>
+                                    <span>{heroSection.desc1}</span><br />
+                                    <span className="text-amber-400 ">{heroSection.desc2}</span><br />
+                                    <span>{heroSection.desc3}</span>
                                 </div>
-                                <h4 className='text-lg font-normal'>Take your learning organisation to the next level</h4>
-        
+                                <h4 className='text-lg font-normal'>{heroSection.desc4}</h4>
+
                             </div>
 
                             <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
-                                <h4>Get Started Now</h4>
+                                <h4>{heroSection.button}</h4>
                                 <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
                                     <img className='w-5 h-3.5' src="../public/arrow_home.png" alt="yellow arrow" />
                                 </button>
@@ -208,7 +189,7 @@ export default function Home() {
 
             </article>
 
-            
+
         </div>
     </>)
 }

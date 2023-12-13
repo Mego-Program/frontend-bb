@@ -1,4 +1,5 @@
 import { buildClient } from '@datocms/cma-client-browser';
+
 const client = new buildClient({ apiToken: 'ec1e1d0e08445b13ea2d78bf467b27',});
 
 export async function getCareers() {
