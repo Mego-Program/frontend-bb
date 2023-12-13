@@ -8,9 +8,8 @@ export default function Home() {
     const [heroSection, setHeroSection] = useState({});
 
     useEffect(() => {
-        getHeroSection().then(setHeroSection).catch(console.error);
+        getHeroSection('Home').then(setHeroSection).catch(console.error);
     }, []);
-
 
     return (<>
 
@@ -21,7 +20,6 @@ export default function Home() {
                     <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
                         <div className='flex flex-col w-full lg:w-1/2 '>
                             <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
-                                <h6 className='color-yellow text-sm font-normal my-2'>Build Your Future</h6>
                                 <div className='my-2'>
                                     <span>{heroSection.desc1}</span><br />
                                     <span className="text-amber-400 ">{heroSection.desc2}</span><br />

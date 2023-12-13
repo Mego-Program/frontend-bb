@@ -2,21 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../../cms-to-plansPage';
 import HeroSection from '../components/HeroSection';
 import Entry from '../components/Entry';
+import { getHeroSection } from '../../cms-to-hero';
 
 export default function Price() {
-  
-    const [plansPage, setPlansPage] = useState([]) 
+  const [plansPage, setPlansPage] = useState([]);
+  const [heroSection, setHeroSection] = useState({});
 
-useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
-        const plPg = await getPlansPage();
-        setPlansPage(plPg);
+      const plPg = await getPlansPage();
+      setPlansPage(plPg);
     }
 
     fetchData();
-}, []);
+  }, []);
 
-function createEntry(priceTerm) {
+  useEffect(() => {
+    getHeroSection('Price')
+      .then(setHeroSection)
+      .catch(console.error);
+  }, []);
+
+  function createEntry(priceTerm) {
     return (
       <Entry
         key={priceTerm.title}
@@ -28,14 +35,18 @@ function createEntry(priceTerm) {
     );
   }
 
-    return (
-      <>
-      <HeroSection firstTxt="We will be" yellowTxt=" happy to offer you" lastTxt=" the route that suits you."
-          smallTxt="Send us a message and we will get back to you as soon as possible" buttonTxt="Learn More" />
-        <div>
-            <dl className="dictionary">
-                {plansPage.map(createEntry)}</dl>
-        </div>
-       </> 
-    )
+  return (
+    <>
+      <HeroSection 
+          firstTxt={heroSection.desc1}
+          yellowTxt={heroSection.desc2} 
+          lastTxt={heroSection.desc3}
+          smallTxt={heroSection.desc4}
+          buttonTxt={heroSection.button} />
+      <div>
+        <dl className="dictionary">
+          {plansPage.map(createEntry)}</dl>
+      </div>
+    </>
+  )
 }
