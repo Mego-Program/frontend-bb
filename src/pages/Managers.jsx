@@ -1,6 +1,5 @@
 import React from 'react'
 import OurStory from '../components/OurStory'
-import Employees from '../components/Employees'
 import ManagerLayout from '../components/ManagerLayout'
 import { Outlet } from 'react-router-dom'
 
@@ -58,25 +57,9 @@ export default function Managers() {
       <div className='w-full flex justify-center bg-gray-950'
         style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
         <div className='w-4/5'>
-          <div className='flex flex-row w-full h-[200px] space-x-4 '>
-            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
-                <h1>managers</h1>
-              </button>
-            </div>
-            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
-                <h1>participants</h1>
-              </button>
-            </div>
-            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
-                <h1>mentors</h1>
-              </button>
-            </div>
-          </div>
+          
 
-          <div>
+          <div className='w-full'>
             <ManagerLayout />
           </div>
 
