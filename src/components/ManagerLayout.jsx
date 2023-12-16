@@ -26,7 +26,7 @@ export default function ManagerLayout() {
             <ul className="flex text-right space-x-6">
               <li className="hover:color-yellow">
                 <Link
-                  to="/managers"
+                  to="/managers/managers"
                   onClick={() => handleLinkClick(1)}
                   className={getLinkClassName(1)}
                 >
@@ -35,7 +35,7 @@ export default function ManagerLayout() {
               </li>
               <li className="hover:color-yellow">
                 <Link
-                  to="/managers/participants"
+                  to="/managers/mentors"
                   onClick={() => handleLinkClick(2)}
                   className={getLinkClassName(2)}
                 >
@@ -44,7 +44,7 @@ export default function ManagerLayout() {
               </li>
               <li className="hover:color-yellow">
                 <Link
-                  to="/managers/mentors"
+                  to="/managers/marketing"
                   onClick={() => handleLinkClick(3)}
                   className={getLinkClassName(3)}
                 >

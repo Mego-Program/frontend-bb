@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import OurStory from '../components/OurStory';
-import Employees from '../components/Employees';
-import ManagerLayout from '../components/ManagerLayout';
+import EmployeeCard from '../components/EmployeeCard';
+// import ManagerLayout from '../components/ManagerLayout';
 import { Outlet } from 'react-router-dom';
 import { getHeroSection } from '../../cms-to-hero';
+import { getTeamMembers } from '../../cms-to-teamMembers';
 
 export default function Managers() {
   const [heroSection, setHeroSection] = useState({});
+  // Y:
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [activeGroup, setActiveGroup] = useState('managers');
+  // Y.
 
   useEffect(() => {
     getHeroSection('Managers').then(setHeroSection).catch(console.error);
   }, []);
+
+  // Y:
+  useEffect(() => {
+    getTeamMembers().then(setTeamMembers).catch(console.error);
+  }, []);
+  const filteredTeamMembers = teamMembers.filter(member => member.group === activeGroup);
+  // Y.
 
   return (<>
     <div className='w-[100vw] min-h-screen flex flex-col justify-center'>
@@ -21,16 +33,16 @@ export default function Managers() {
             <div className='flex flex-col w-full lg:w-1/2 '>
               <div className='text-left text-white text-4xl font-bold capitalize leading-10 my-5'>
                 <div className='my-5  '>
-                  <span>{ heroSection.desc1 }</span><br />
-                  <span className="text-amber-400 ">{ heroSection.desc2 }</span><br />
-                  <span>{ heroSection.desc3 }</span>
+                  <span>{heroSection.desc1}</span><br />
+                  <span className="text-amber-400 ">{heroSection.desc2}</span><br />
+                  <span>{heroSection.desc3}</span>
                 </div>
                 <p className='text-lg font-normal'>
-                { heroSection.desc4 }</p>
+                  {heroSection.desc4}</p>
               </div>
 
               <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
-                <h4>{ heroSection.button }</h4>
+                <h4>{heroSection.button}</h4>
                 <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
                   <img className='w-5 h-3.5' src="arrow_home.png" alt="yellow arrow" />
                 </button>
@@ -64,26 +76,36 @@ export default function Managers() {
         <div className='w-4/5'>
           <div className='flex flex-row w-full h-[200px] space-x-4 '>
             <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
+              <button className='w-full h-full' onClick={() => setActiveGroup('managers')}>
                 <h1>managers</h1>
               </button>
             </div>
             <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
-                <h1>participants</h1>
-              </button>
-            </div>
-            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
-              <button className='w-full h-full'>
+              <button className='w-full h-full' onClick={() => setActiveGroup('mentors')}>
                 <h1>mentors</h1>
               </button>
             </div>
+            <div className="flex justify-center items-center w-1/3 lg:h-36 h-20 text-white hover:text-slate-950 bg-slate-950 hover:bg-amber-400 rounded-lg border border-indigo-950">
+              <button className='w-full h-full' onClick={() => setActiveGroup('marketing')}>
+                <h1>marketing</h1>
+              </button>
+            </div>
           </div>
 
-          <div>
+           <div className="flex flex-wrap justify-center gap-4 p-4"> 
+            {filteredTeamMembers.map(member => (
+               <EmployeeCard 
+                 key={member.name} 
+                srcImg={member.picture} 
+                 Name={member.name} 
+                 Role={member.jtitle} 
+               /> 
+             ))} 
+          </div>
+
+          {/* {/* <div>
             <ManagerLayout />
-          </div>
-
+            </div> /*} */}
 
           <div className="w-full text-white text-base text-left font-light capitalize leading-10">
             <p>
