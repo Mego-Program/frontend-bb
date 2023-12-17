@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import OurStory from '../components/OurStory';
 import EmployeeCard from '../components/EmployeeCard';
-// import ManagerLayout from '../components/ManagerLayout';
+import ManagerLayout from '../components/ManagerLayout';
 import { Outlet } from 'react-router-dom';
 import { getHeroSection } from '../../cms-to-hero';
 import { getTeamMembers } from '../../cms-to-teamMembers';
