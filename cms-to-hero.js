@@ -1,30 +1,29 @@
 import { SiteClient } from 'datocms-client';
-
 const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
 
-// Hero section.
-export async function getHeroSection(titleName) {
+export async function getHeroSection(pageName) {
     try {
-        const heroSections = {
-            filter: {
-                type: 'hero_section',
-            }
-        };
+        const heroSections = await client.items.all({
+            'filter[type]': 'hero_section',
+            'filter[fields][title][eq]': pageName,
+        });
 
-        if (titleName) {
-            heroSections.filter.fields = {
-                title: {
-                    titleName
-                }
+        if (heroSections.length > 0) {
+            const items = heroSections[0];
+            return {
+                title: items.title,
+                desc1: items.desc1,
+                desc2: items.desc2,
+                desc3: items.desc3,
+                desc4: items.desc4,
+                button: items.button,
             };
+        } else {
+            console.error(`No hero section found for page:  ${pageName}`);
+            return null;
         }
-
-       const items = await client.items.all(heroSections);
-    
-
-    console.log(items);
-    return items;
-} catch (error) {
-    console.error('Error:', error);
-}
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
 }
