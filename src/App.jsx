@@ -10,7 +10,7 @@ import Careers from "./pages/Careers.jsx";
 import Mentors from "./components/Mentors.jsx";
 import Participants from "./components/Participants.jsx";
 import Employees from "./components/Employees.jsx";
-import './styles.css'
+import './styles.css';
 
 export default function App() {
   return (
