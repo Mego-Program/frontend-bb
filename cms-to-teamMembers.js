@@ -16,9 +16,7 @@ export async function getTeamMembers() {
                 picture: imageData?.url,
                 name: item.name,
                 jtitle: item.jtitle,
-                // Y:
                 group: determineGroup(item),
-                // Y.
             });
         };
 
@@ -41,18 +39,16 @@ export async function getImageData(uploadId) {
     }
 }
 
-// Y:
 function determineGroup(memberItem) {
   
     if (memberItem.department.includes('Manager')) {
         return 'managers';
-    } else if (memberItem.jtitle.includes('Mentor')) {
+    } else if (memberItem.department.includes('Mentors')) {
         return 'mentors';
     } else {
         return 'marketing';
     }
 }
-// Y.
 
 
 
