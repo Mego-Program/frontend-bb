@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import OurStory from '../components/OurStory';
 import EmployeeCard from '../components/EmployeeCard';
-import { Outlet } from 'react-router-dom';
 import { getHeroSection } from '../../cms-to-hero';
 import { getTeamMembers } from '../../cms-to-teamMembers';
 
 export default function Managers() {
   const [heroSection, setHeroSection] = useState({});
-  // Y:
   const [teamMembers, setTeamMembers] = useState([]);
   const [activeGroup, setActiveGroup] = useState('managers');
-  // Y.
 
   useEffect(() => {
     getHeroSection('Managers').then(setHeroSection).catch(console.error);
   }, []);
 
-  // Y:
   useEffect(() => {
     getTeamMembers().then(setTeamMembers).catch(console.error);
   }, []);
   const filteredTeamMembers = teamMembers.filter(member => member.group === activeGroup);
-  // Y.
 
   return (<>
     <div className='w-[100vw] min-h-screen flex flex-col justify-center'>
