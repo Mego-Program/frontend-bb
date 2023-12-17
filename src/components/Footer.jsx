@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
 
             <div className=' flex justify-center lg:justify-start mt-5 pb-3 '>
-              <img className=' w-28' src="aikon_footer.png" alt="icon footer" title='icon footer' />
+              <img className=' w-28' src="./aikon_footer.png" alt="icon footer" title='icon footer' />
             </div>
           </div>
 
