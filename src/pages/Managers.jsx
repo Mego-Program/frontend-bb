@@ -91,16 +91,6 @@ export default function Managers() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 p-4">
-            {filteredTeamMembers.map(member => (
-              <EmployeeCard
-                key={member.name}
-                srcImg={member.picture}
-                Name={member.name}
-                Role={member.jtitle}
-              />
-            ))}
-          </div>
 
           <div className="w-full text-white text-base text-left font-light capitalize leading-10">
             <p>
@@ -112,8 +102,15 @@ export default function Managers() {
             </p>
           </div>
 
-          <div>
-            <Outlet />
+          <div className="flex flex-wrap justify-center gap-4 p-4">
+            {filteredTeamMembers.map(member => (
+              <EmployeeCard
+                key={member.name}
+                srcImg={member.picture}
+                Name={member.name}
+                Role={member.jtitle}
+              />
+            ))}
           </div>
 
           <div className='text-white text-base my-5 font-light capitalize leading-10'>
