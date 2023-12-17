@@ -3,6 +3,7 @@ import { getPlansPage } from '../../cms-to-plansPage';
 import HeroSection from '../components/HeroSection';
 import { getHeroSection } from '../../cms-to-hero';
 
+
 function Entry(props) {
   return (
     <div className="term">

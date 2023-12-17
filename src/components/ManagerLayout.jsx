@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../App.css"; //?
-import { Outlet } from "react-router-dom";
-import { Children } from "react";
 
+const links = [
+  { id: 1, path: "/managers", text: "managers" },
+  { id: 2, path: "/managers/participants", text: "participants" },
+  { id: 3, path: "/managers/mentors", text: "mentors" },
+];
 
 export default function ManagerLayout() {
-    const [activeLink, setActiveLink] = useState(null);
+  const [activeLink, setActiveLink] = useState(null);
 
   const handleLinkClick = (linkId) => {
-    // עדכון של המשתנה המקומי activeLink
     setActiveLink(linkId);
   };
 
-  // פונקציה שמחזירה את ה-className בהתאם לסטייט
   const getLinkClassName = (linkId) => {
     return linkId === activeLink ? "color-yellow" : "hover:color-yellow";
   };
+
   return (
     <>
     <div className="bg-white">ManagerLayout</div>
@@ -61,4 +62,7 @@ export default function ManagerLayout() {
 
      </>
   )
-}
+  }
+
+
+

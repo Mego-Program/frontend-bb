@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OurStory from '../components/OurStory';
 import EmployeeCard from '../components/EmployeeCard';
-import ManagerLayout from '../components/ManagerLayout';
 import { Outlet } from 'react-router-dom';
 import { getHeroSection } from '../../cms-to-hero';
 import { getTeamMembers } from '../../cms-to-teamMembers';
@@ -102,10 +101,6 @@ export default function Managers() {
               />
             ))}
           </div>
-
-          {/* {/* <div>
-            <ManagerLayout />
-            </div> /*} */}
 
           <div className="w-full text-white text-base text-left font-light capitalize leading-10">
             <p>
