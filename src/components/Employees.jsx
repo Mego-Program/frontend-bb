@@ -33,14 +33,3 @@ export default function Employees() {
     </>);
 }
 
-// Yonatan's models:
-{/* <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' />
-            <EmployeeCard Name='Emma' Role='Web Developer' srcImg='img-3.png' /> */}
