@@ -39,7 +39,7 @@ export default function ManagerLayout() {
                   onClick={() => handleLinkClick(2)}
                   className={getLinkClassName(2)}
                 >
-                  PARTICIPANTS
+                  MENTORS
                 </Link>
               </li>
               <li className="hover:color-yellow">
@@ -48,7 +48,7 @@ export default function ManagerLayout() {
                   onClick={() => handleLinkClick(3)}
                   className={getLinkClassName(3)}
                 >
-                  MENTORS
+                  MARKETING
                 </Link>
               </li>
               

@@ -6,7 +6,6 @@ export async function getTeamMembers() {
         const items = await client.items.all({
             filter: {
                 type: 'member',
-                eq: 'department',
             },
         });
 

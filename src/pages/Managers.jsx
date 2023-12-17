@@ -92,15 +92,15 @@ export default function Managers() {
             </div>
           </div>
 
-           <div className="flex flex-wrap justify-center gap-4 p-4"> 
+          <div className="flex flex-wrap justify-center gap-4 p-4">
             {filteredTeamMembers.map(member => (
-               <EmployeeCard 
-                 key={member.name} 
-                srcImg={member.picture} 
-                 Name={member.name} 
-                 Role={member.jtitle} 
-               /> 
-             ))} 
+              <EmployeeCard
+                key={member.name}
+                srcImg={member.picture}
+                Name={member.name}
+                Role={member.jtitle}
+              />
+            ))}
           </div>
 
           {/* {/* <div>
