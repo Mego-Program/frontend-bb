@@ -5,11 +5,11 @@ import Home from "./pages/Home.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Managers from "./pages/Managers.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
-import Price from "./pages/price.jsx";
+import Price from "./pages/Price.jsx";
 import Careers from "./pages/Careers.jsx";
-import Mentors from "./components/Mentors.jsx";
 import Participants from "./components/Participants.jsx";
 import Employees from "./components/Employees.jsx";
+import './styles.css';
 
 export default function App() {
   return (
@@ -20,7 +20,6 @@ export default function App() {
         <Route path="/managers" element={<Managers />}>
           <Route index element={<Employees />} />
           <Route path="participants" element={<Participants />} />
-          <Route path="mentors" element={<Mentors />} />
         </Route>
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/price" element={<Price />} />

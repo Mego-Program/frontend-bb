@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { getTeamMembers } from '../../cms-to-teamMembers';
 
 
-
 export default function Employees() {
     const [teamMembers, setTeamMembers] = useState([]);
 
@@ -24,7 +23,8 @@ export default function Employees() {
                     key={member.name} 
                     Name={member.name} 
                     Role={member.jtitle} 
-                    srcImg={member.picture} // Make sure to use the correct property for the image URL
+                    srcImg={member.picture}
+                     
                 />
             ))}
             
@@ -32,4 +32,3 @@ export default function Employees() {
 
     </>);
 }
-
