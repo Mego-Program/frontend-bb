@@ -8,7 +8,6 @@ async function getCustomerReviews() {
         const items = await client.items.all({
             filter: {
                 type: 'customer_review',
-                // Additional filter options can be added here.
             }
         });
 

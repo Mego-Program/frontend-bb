@@ -1,9 +1,16 @@
-import React from 'react'
-import OurStory from '../components/OurStory'
-import ManagerLayout from '../components/ManagerLayout'
-import { Outlet } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import OurStory from '../components/OurStory';
+import ManagerLayout from '../components/ManagerLayout';
+import { Outlet } from 'react-router-dom';
+import { getHeroSection } from '../../cms-to-hero';
 
 export default function Managers() {
+  const [heroSection, setHeroSection] = useState({});
+
+  useEffect(() => {
+    getHeroSection('Managers').then(setHeroSection).catch(console.error);
+  }, []);
+
   return (<>
     <div className='w-[100vw] min-h-screen flex flex-col justify-center'>
       <div className='w-full flex justify-center bg-gray-950'
@@ -13,18 +20,16 @@ export default function Managers() {
             <div className='flex flex-col w-full lg:w-1/2 '>
               <div className='text-left text-white text-4xl font-bold capitalize leading-10 my-5'>
                 <div className='my-5  '>
-                  <span>We are the </span>
-                  <span className="text-amber-400 ">brand identity </span>
-                  <span>house <br /> of the South.</span>
+                  <span>{ heroSection.desc1 }</span><br />
+                  <span className="text-amber-400 ">{ heroSection.desc2 }</span><br />
+                  <span>{ heroSection.desc3 }</span>
                 </div>
                 <p className='text-lg font-normal'>
-                  We believe that identity is essential, and to stand out in your space,
-                  you have to know who you are. Our work does just that—<span className="text-amber-400 ">helping brands uncover
-                    and express</span> what makes them unique and how they can drive culture forward.</p>
+                { heroSection.desc4 }</p>
               </div>
 
               <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
-                <h4>Learn More</h4>
+                <h4>{ heroSection.button }</h4>
                 <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
                   <img className='w-5 h-3.5' src="arrow_home.png" alt="yellow arrow" />
                 </button>
@@ -35,7 +40,6 @@ export default function Managers() {
               <img className='h-full' src="web-development-team.png" alt="" />
             </div>
           </div>
-
 
           <div className='max-w-full my-8'>
             <div className=' flex flex-row justify-between overflow-scroll text-base text-center'>

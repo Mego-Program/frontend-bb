@@ -1,8 +1,6 @@
 import { SiteClient } from 'datocms-client';
-
 const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
 
-// Our Contact Information.
 export async function getContactInfo() {
     try {
         const records = await client.items.all({
@@ -10,7 +8,6 @@ export async function getContactInfo() {
                 type: 'contact',
             },
         });
-        console.log(records);
 
         const contactInfo = records[0];
         return {
@@ -28,4 +25,3 @@ export async function getContactInfo() {
         console.error('Error:', error);
     }
 }
-getContactInfo();
