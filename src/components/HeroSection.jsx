@@ -3,7 +3,7 @@ import YellowButton from './Yellowutton';
 
 function HeroSection(props) {
     return (<>
-        <div className='w-[100vw] h-[800px] flex justify-center'
+        <div className='w-[100vw] h-[550px] flex justify-center'
             style={{ backgroundImage: "url('../public/Lines 1.png')" }}>
             <div className=' w-4/5'>
                 <div className='flex items-center h-[450px] w-full flex-col lg:flex-row'>
@@ -21,6 +21,7 @@ function HeroSection(props) {
                         </div>
                     </div>
                     <div className='w-1/3 flex'>
+
                         <img className='w-[426px] h-[424px]' src="../public/developer_with_tags.png" alt="Working Developer" title='click on me' style={{ marginTop: '210px' }} />
                     </div>
                 </div>
