@@ -3,27 +3,32 @@ import React, { useState, useEffect } from 'react';
 import { getCustomerReviews } from "../../cms-to-custReview";
 import EmployeeCard from "../components/EmployeeCard";
 import HeroSection from "../components/HeroSection";
-
+import { getHeroSection } from "../../cms-to-hero";
 
 export default function AboutUs() {
     const [custReview, setCustReview] = useState([]);
+    const [heroSection, setHeroSection] = useState({});
 
     useEffect(() => {
         getCustomerReviews().then(setCustReview).catch(console.error);
     }, []);
 
+    useEffect(() => {
+        getHeroSection('AboutUs')
+          .then(setHeroSection)
+          .catch(console.error);
+      }, []);
+
     return (<>
 
         <HeroSection
-            firstTxt="The art of visual "
-            yellowTxt="story telling"
-            lastTxt=""
-            smallTxt="InnovaSol is a graphic designer agency that helps brands with compelling and persuasive designs. With more tham 1 million person-hours,
-                we have worked with more than 500 brands across varios industries. Irrespective of whether you are pitching to investors, vying for clients or
-                promoting your brand in this increasungly competitive world: our creative agency ensures to deleiver a strong audience-oriented messaging."
-            buttonTxt="Learn More" />
+            firstTxt={heroSection.desc1}
+            yellowTxt={heroSection.desc2}
+            lastTxt={heroSection.desc3}
+            smallTxt={heroSection.desc4}
+            buttonTxt={heroSection.button} />
 
-        <div className="w-screen h-screen flex justify-center my-5"
+        <div className="w-screen flex justify-center my-5"
             style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
             <div className="w-[80%] h-[auto]">
                 <div style={{ marginBottom: "20px" }}>
