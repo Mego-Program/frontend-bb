@@ -7,8 +7,6 @@ import Managers from "./pages/Managers.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import Price from "./pages/Price.jsx";
 import Careers from "./pages/Careers.jsx";
-import Participants from "./components/Participants.jsx";
-import Employees from "./components/Employees.jsx";
 import './styles.css';
 
 export default function App() {
@@ -17,10 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/managers" element={<Managers />}>
-          <Route index element={<Employees />} />
-          <Route path="participants" element={<Participants />} />
-        </Route>
+        <Route path="/managers" element={<Managers />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/price" element={<Price />} />
         <Route path="/careers" element={<Careers />} />
