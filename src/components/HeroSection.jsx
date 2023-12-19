@@ -21,7 +21,8 @@ function HeroSection(props) {
                         </div>
                     </div>
                     <div className='w-1/3 flex'>
-                        <img className='w-[426px] h-[424px]' src="../public/developer_with_tags.png" alt="Working Developer" title='click on me' />
+
+                        <img className='w-[426px] h-[424px]' src="../public/developer_with_tags.png" alt="Working Developer" title='click on me' style={{ marginTop: '210px' }} />
                     </div>
                 </div>
             </div>
