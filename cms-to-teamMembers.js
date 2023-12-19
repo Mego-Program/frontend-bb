@@ -1,4 +1,5 @@
 import { SiteClient } from 'datocms-client';
+
 const client = new SiteClient(import.meta.env.VITE_TOKEN);
 
 export async function getTeamMembers() {
