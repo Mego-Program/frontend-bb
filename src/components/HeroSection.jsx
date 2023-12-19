@@ -10,7 +10,7 @@ function HeroSection(props) {
                     <div className=' w-2/3'>
                         <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
                             <div className='my-2'>
-                                <span className="">{props.firstTxt}</span>
+                                <span className="">{props.firstTxt}</span><br />
                                 <span className="text-amber-400 ">{props.yellowTxt}</span><br />
                                 <span>{props.lastTxt}</span><br />
                             </div>

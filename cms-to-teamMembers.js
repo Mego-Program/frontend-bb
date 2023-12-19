@@ -1,5 +1,5 @@
 import { SiteClient } from 'datocms-client';
-const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
+const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
 
 export async function getTeamMembers() {
     try {
@@ -40,7 +40,7 @@ export async function getImageData(uploadId) {
 }
 
 function determineGroup(memberItem) {
-  
+
     if (memberItem.department.includes('Manager')) {
         return 'managers';
     } else if (memberItem.department.includes('Mentors')) {
