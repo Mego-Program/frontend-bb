@@ -94,10 +94,10 @@ export default function Section() {
                                 our menors are coming from the industry to help us do it.</p>
                         </div>
                         <div className=" flex justify-around items-center w-2/3 lg:w-1/3 my-4 lg:text-2xl text-lg font-medium capitalize leading-10">
-                            <button className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg">
+                            <button className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg transform-gpu transition-transform duration-500 active:scale-90">
                                 <h1>Try Yourself</h1>
                             </button>
-                            <button className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg mx-3">
+                            <button className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg mx-3 transform-gpu transition-transform duration-500 active:scale-90">
                                 <h1 className='text-slate-900'>Get Started</h1>
                             </button>
 
