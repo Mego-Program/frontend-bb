@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import YellowButton from "./Yellowutton";
 import { SiteClient } from 'datocms-client';
-const client = new SiteClient(import.meta.env.VITE_TOKEN);
 
 
 function ContactForm() {
@@ -18,6 +17,8 @@ function ContactForm() {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
+
+    const client = new SiteClient(import.meta.env.VITE_TOKEN2);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -133,6 +134,7 @@ function ContactForm() {
                 <div className="mt-7">
                     <YellowButton txt="Send" />
                 </div>
+
             </div>
         </form>
     );
