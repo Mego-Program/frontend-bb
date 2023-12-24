@@ -18,8 +18,7 @@ function ContactForm() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
-
+    const client = new SiteClient(import.meta.env.VITE_TOKEN2);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -135,6 +134,7 @@ function ContactForm() {
                 <div className="mt-7">
                     <YellowButton txt="Send" />
                 </div>
+
             </div>
         </form>
     );

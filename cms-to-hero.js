@@ -1,5 +1,5 @@
 import { SiteClient } from 'datocms-client';
-const client = new SiteClient('ec1e1d0e08445b13ea2d78bf467b27');
+const client = new SiteClient(import.meta.env.VITE_TOKEN);
 
 export async function getHeroSection(pageName) {
     try {
