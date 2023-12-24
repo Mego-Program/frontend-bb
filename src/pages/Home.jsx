@@ -3,6 +3,9 @@ import ComponentHeaderHome from '../components/ComponentHeaderHome';
 import Check from '../components/Check';
 import React, { useState, useEffect } from 'react';
 import { getHeroSection } from '../../cms-to-hero';
+import YellowButton from '../components/Yellowutton';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 export default function Home() {
     const [heroSection, setHeroSection] = useState({});
@@ -10,6 +13,16 @@ export default function Home() {
     useEffect(() => {
         getHeroSection('Home').then(setHeroSection).catch(console.error);
     }, []);
+
+    useEffect(() => {
+        AOS.init({
+            duration: 800, 
+            easing: 'ease',
+            once: false,
+        });
+    });
+
+
 
     return (<>
 
@@ -31,8 +44,8 @@ export default function Home() {
 
                             <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
                                 <h4>{heroSection.button}</h4>
-                                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
-                                    <img className='w-5 h-3.5' src="../public/arrow_home.png" alt="yellow arrow" />
+                                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1">
+                                    <YellowButton />
                                 </button>
                             </div>
 
@@ -89,26 +102,26 @@ export default function Home() {
                                         learning</span> journey</span>
                                 </div>
 
-                                <div className=' flex flex-row flex-wrap w-full h-2/3 '>
-                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5  '>
+                                <div className=' flex flex-row flex-wrap w-full h-2/3'>
+                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-right">
                                         <div><span className='text-amber-400'>1</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Create Account</h2>
                                         <p className=' text-base font-normal'>At first create your accont at our website.</p>
                                     </div>
 
-                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5  '>
+                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-left" data-aos-delay="300">
                                         <div><span className='text-amber-400'>2</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Select Course</h2>
                                         <p className=' text-base font-normal'>Then select your preffered course from our bucket.</p>
                                     </div>
 
-                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5  '>
+                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-right">
                                         <div><span className='text-amber-400'>3</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Learn your skill</h2>
                                         <p className=' text-base font-normal'>Learn yiur skill from thr best learning materials</p>
                                     </div>
 
-                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5  '>
+                                    <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-left" data-aos-delay="300">
                                         <div><span className='text-amber-400'>4</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Make success story</h2>
                                         <p className=' text-base font-normal'>After learning the skill make steps to success.</p>
@@ -145,7 +158,7 @@ export default function Home() {
                     <div className='flex lg:flex-row flex-col w-full h-[900] lg:h-[550px] '>
                         <div className="flex lg:w-1/2 w-full items-center ">
 
-                            <div className='relative flex justify-center items-center bg-indigo-950 w-[70%] h-[70%] rounded-2xl px-3'>
+                            <div className='relative flex justify-center items-center bg-indigo-950 w-[70%] h-[70%] rounded-2xl px-3' data-aos="fade-up-right" data-aos-delay="150">
                                 <img className=' w-[6/7] h-[6/7] object-cover' src="../public/Ellipse 2.png" alt="" />
                                 <img className=' w-[70%] h-[115%] absolute bottom-0  left-9 z-[2] ' src="../public/man.png" alt="" />
                                 <img className=' w-40 h-20 absolute top-8  left-[82%] z-[2]' src="../public/Rounded Rectangle.png" alt="" />

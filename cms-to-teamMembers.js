@@ -1,11 +1,6 @@
 import { SiteClient } from 'datocms-client';
-const client = new SiteClient('b3d15d163318321dd591d7733a32ee');
 
-// import { buildClient } from 'datocms-@datocms/cma-client-node';
-// const client = new buildClient({ 
-//     apiToken: 'b3d15d163318321dd591d7733a32ee',
-// });
-
+const client = new SiteClient(import.meta.env.VITE_TOKEN);
 
 export async function getTeamMembers() {
     try {
@@ -14,6 +9,7 @@ export async function getTeamMembers() {
                 type: 'member',
             },
         });
+
         const teamMembers = [];
         for (let item of items) {
             let imageData = await getImageData(item.picture?.uploadId);
@@ -21,8 +17,9 @@ export async function getTeamMembers() {
                 picture: imageData?.url,
                 name: item.name,
                 jtitle: item.jtitle,
-            })
-        }
+                group: determineGroup(item),
+            });
+        };
 
         console.log('Team Members:', teamMembers);
         return teamMembers;
@@ -41,12 +38,18 @@ export async function getImageData(uploadId) {
     } catch (error) {
         console.log('error', error);
     }
-
 }
 
+function determineGroup(memberItem) {
 
-
-
+    if (memberItem.department.includes('Manager')) {
+        return 'managers';
+    } else if (memberItem.department.includes('Mentors')) {
+        return 'mentors';
+    } else {
+        return 'marketing';
+    }
+}
 
 
 

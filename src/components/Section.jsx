@@ -21,7 +21,7 @@ export default function Section() {
                             <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
                                 <h4>Get Started Now</h4>
                                 <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
-                                    <img className='w-5 h-3.5' src="arrow_home.png" alt="yellow arrow" />
+                                    <img className='w-5 h-3.5' src="./arrow_home.png" alt="yellow arrow" />
                                 </button>
                             </div>
                         </div>
@@ -40,9 +40,9 @@ export default function Section() {
                                 h3='Finance Head At Ripple Co'
                                 h1='Natia  Gutowski'
                                 p='Marie provided me some invaluable advices.
-                 i am very satisfied with how i was attebde. 
-                 Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='arrow_home.png' />
+                                    i am very satisfied with how i was attebde. 
+                                    Her mentoship has truly helped  me to increase my sales.'
+                                srcImg='./arrow_home.png' />
 
                             <CostumerComments
                                 additionalClass='text-slate-950 bg-amber-400'
@@ -50,34 +50,34 @@ export default function Section() {
                                 h3='Team Leader'
                                 h1='Amanda Smith'
                                 p='Marie provided me some invaluable advices.
-                 i am very satisfied with how i was attebde.
-                  Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='right_arrow_black.png' />
+                                    i am very satisfied with how i was attebde.
+                                    Her mentoship has truly helped  me to increase my sales.'
+                                srcImg='./right_arrow_black.png' />
 
                             <CostumerComments className='mr-0'
                                 h3='Web & Graphic Designer'
                                 h1='Gehrrett Thomas'
                                 p='Marie provided me some invaluable advices.
-                 i am very satisfied with how i was attebde.
-                  Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='arrow_home.png' />
+                                    i am very satisfied with how i was attebde.
+                                    Her mentoship has truly helped  me to increase my sales.'
+                                srcImg='./arrow_home.png' />
 
                         </div>
 
                     </div>
                     <div className='max-w-[100vw] my-7'>
                         <div className='flex flex-row w-full justify-between space-x-4 overflow-scroll'>
-                            <ItemTag srcImg='Flexible 1.png' />
-                            <ItemTag srcImg='Global.png' />
-                            <ItemTag srcImg='On-time.png' />
-                            <ItemTag srcImg='24_7.png' />
-                            <ItemTag srcImg='Seamless.png' />
-                            <ItemTag srcImg='SECURITY+&+COMPLIANCE.png' />
-                            <ItemTag srcImg='research-and-development.png' />
-                            <ItemTag srcImg='UX-focused.png' />
-                            <ItemTag srcImg='3456248-200.png' />
-                            <ItemTag srcImg='domain.png' />
-                            <ItemTag srcImg='Build.png' />
+                            <ItemTag srcImg='./Flexible 1.png' />
+                            <ItemTag srcImg='./Global.png' />
+                            <ItemTag srcImg='./On-time.png' />
+                            <ItemTag srcImg='./24_7.png' />
+                            <ItemTag srcImg='./Seamless.png' />
+                            <ItemTag srcImg='./SECURITY+&+COMPLIANCE.png' />
+                            <ItemTag srcImg='./research-and-development.png' />
+                            <ItemTag srcImg='./UX-focused.png' />
+                            <ItemTag srcImg='./3456248-200.png' />
+                            <ItemTag srcImg='./domain.png' />
+                            <ItemTag srcImg='./Build.png' />
 
                         </div>
                     </div>
@@ -94,10 +94,12 @@ export default function Section() {
                                 our menors are coming from the industry to help us do it.</p>
                         </div>
                         <div className=" flex justify-around items-center w-2/3 lg:w-1/3 my-4 lg:text-2xl text-lg font-medium capitalize leading-10">
-                            <button className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg">
+                            <button className=" flex justify-center items-center w-40 h-16 bg-slate-900 rounded-lg transform-gpu transition-transform duration-500 active:scale-90 shadow-md"
+                            style={{ boxShadow: '4px 4px 4px  rgba(0, 0, 0, 0.7)' }}>
                                 <h1>Try Yourself</h1>
                             </button>
-                            <button className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg mx-3">
+                            <button className=" flex justify-center items-center w-40 h-16 bg-white rounded-lg mx-3 transform-gpu transition-transform duration-500 active:scale-90 shadow-md"
+                            style={{ boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.7)' }}>
                                 <h1 className='text-slate-900'>Get Started</h1>
                             </button>
 
