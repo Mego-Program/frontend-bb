@@ -9,6 +9,7 @@ import Price from "./pages/Price.jsx";
 import Careers from "./pages/Careers.jsx";
 import './styles.css';
 import ScrollTop from "./components/scrollTop.jsx";
+import Payments from "./pages/Payments.jsx";
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/price" element={<Price />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/payments" element={<Payments />} />
       </Routes>
     </Layout>
   );
