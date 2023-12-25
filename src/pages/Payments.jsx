@@ -69,7 +69,7 @@ export default function Payments() {
                         <p class="text-2xl font-semibold ">$408.00</p>
                     </div>
                 </div>
-                <button class="mt-4 mb-8 w-full rounded-md border border-gray-200 bg-gray-950 px-6 py-3 font-medium text-white">Place Order</button>
+                <button class="mt-4 mb-8 w-full rounded-md border border-indigo-950 bg-gray-950 px-6 py-3 font-medium text-white">Place Order</button>
             </div>
         </div>
 
