@@ -44,7 +44,7 @@ export default function Managers() {
 
               <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
                 <h4>{heroSection.button}</h4>
-                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1"
+                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 transform-gpu transition-transform duration-500 active:scale-90 rounded m-1"
                   onClick={navigateToPrice}>
                   <img className='w-5 h-3.5' src="arrow_home.png" alt="yellow arrow" />
                 </button>
