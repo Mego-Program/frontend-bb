@@ -2,13 +2,20 @@ import '../App.css';
 import ComponentHeaderHome from '../components/ComponentHeaderHome';
 import Check from '../components/Check';
 import React, { useState, useEffect } from 'react';
-import { getHeroSection } from '../../cms-to-hero';
-import YellowButton from '../components/Yellowutton';
+import { getHeroSection } from '../cms-functions/cms-to-hero';
+import YellowButton from '../components/YellowButton';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css'; 
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
     const [heroSection, setHeroSection] = useState({});
+    const navigate = useNavigate();
+    const navigateToPrice = () => {
+        navigate('/price');
+    };
+
 
     useEffect(() => {
         getHeroSection('Home').then(setHeroSection).catch(console.error);
@@ -44,7 +51,8 @@ export default function Home() {
 
                             <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
                                 <h4>{heroSection.button}</h4>
-                                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1">
+                                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1"
+                                        onClick={navigateToPrice}>
                                     <YellowButton />
                                 </button>
                             </div>

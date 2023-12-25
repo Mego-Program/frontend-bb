@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getPlansPage } from '../../cms-to-plansPage';
+import { getPlansPage } from '../cms-functions/cms-to-plansPage';
 import HeroSection from '../components/HeroSection';
-import { getHeroSection } from '../../cms-to-hero';
+import { getHeroSection } from '../cms-functions/cms-to-hero';
 
 
 function Entry(props) {
