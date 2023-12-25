@@ -3,8 +3,8 @@ import HeroSection from "../components/HeroSection";
 import Directions from "../components/Directions";
 import "../App.css";
 import React, { useState, useEffect } from 'react';
-import { getContactInfo } from '../../cms-to-ourContactInfo';
-import { getHeroSection } from '../../cms-to-hero';
+import { getContactInfo } from '../cms-functions/cms-to-ourContactInfo';
+import { getHeroSection } from '../cms-functions/cms-to-hero';
 
 export default function ContactUs() {
     const [contact, setContact] = useState({});

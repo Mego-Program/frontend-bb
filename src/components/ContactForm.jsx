@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import YellowButton from "./Yellowutton";
+import YellowButton from "./YellowButton";
 import { SiteClient } from 'datocms-client';
 
 

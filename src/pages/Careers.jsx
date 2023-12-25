@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/HeroSection";
-import { getCareers } from '../../cms-to-careers';
-import { getHeroSection } from '../../cms-to-hero';
+import { getCareers } from '../cms-functions/cms-to-careers';
+import { getHeroSection } from '../cms-functions/cms-to-hero';
 
 
 function JobAccordion({ job, isOpen, onClick }) {

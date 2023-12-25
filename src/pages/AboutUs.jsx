@@ -1,9 +1,9 @@
 import Benefits from "../components/Benefits"
 import React, { useState, useEffect } from 'react';
-import { getCustomerReviews } from "../../cms-to-custReview";
+import { getCustomerReviews } from "../cms-functions/cms-to-custReview";
 import EmployeeCard from "../components/EmployeeCard";
 import HeroSection from "../components/HeroSection";
-import { getHeroSection } from "../../cms-to-hero";
+import { getHeroSection } from "../cms-functions/cms-to-hero";
 
 export default function AboutUs() {
     const [custReview, setCustReview] = useState([]);
