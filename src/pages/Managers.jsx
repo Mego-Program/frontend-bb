@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import OurStory from '../components/OurStory';
 import EmployeeCard from '../components/EmployeeCard';
-import { getHeroSection } from '../../cms-to-hero';
-import { getTeamMembers } from '../../cms-to-teamMembers';
+import { getHeroSection } from '../cms-functions/cms-to-hero';
+import { getTeamMembers } from '../cms-functions/cms-to-teamMembers';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Managers() {
   const [heroSection, setHeroSection] = useState({});
   const [teamMembers, setTeamMembers] = useState([]);
   const [activeGroup, setActiveGroup] = useState('managers');
+  const navigate = useNavigate();
+  const navigateToPrice = () => {
+    navigate('/price');
+  };
+
 
   useEffect(() => {
     getHeroSection('Managers').then(setHeroSection).catch(console.error);
@@ -37,7 +44,8 @@ export default function Managers() {
 
               <div className="flex items-center justify-between w-60 h-12 bg-amber-400 rounded  pl-3 my-3">
                 <h4>{heroSection.button}</h4>
-                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1 ">
+                <button className=" flex justify-center items-center w-20 h-10 bg-gray-950 rounded m-1"
+                  onClick={navigateToPrice}>
                   <img className='w-5 h-3.5' src="arrow_home.png" alt="yellow arrow" />
                 </button>
               </div>

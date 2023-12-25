@@ -1,7 +1,15 @@
 import React from 'react';
-import YellowButton from './Yellowutton';
+import YellowButton from './YellowButton';
+import { useNavigate } from 'react-router-dom';
 
 function HeroSection(props) {
+
+    const navigate = useNavigate();
+
+    const navigateToPrice = () => {
+        navigate('/price');
+    };
+
     return (<>
         <div className='w-[100vw] h-[550px] flex justify-center'
             style={{ backgroundImage: "url('../public/Lines 1.png')" }}>
@@ -16,8 +24,8 @@ function HeroSection(props) {
                             </div>
                             <h4 className='text-lg font-normal'>{props.smallTxt}</h4>
                         </div>
-                        <div style={{ marginTop: '70px' }}>
-                            <YellowButton txt={props.buttonTxt} />
+                        <div style={{ marginTop: '70px' }} onClick={navigateToPrice}>
+                            <YellowButton txt={props.buttonTxt}  />
                         </div>
                     </div>
                     <div className='w-1/3 flex'>
