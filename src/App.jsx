@@ -11,17 +11,17 @@ import './styles.css';
 import ScrollTop from "./components/scrollTop.jsx";
 
 export default function App() {
-  
+
   return (
     <Layout>
       <ScrollTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/managers" element={<Managers />} />
-        <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/price" element={<Price />} />
-        <Route path="/careers" element={<Careers />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/managers" element={<Managers />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/price" element={<Price />} />
+          <Route path="/careers" element={<Careers />} />
       </Routes>
     </Layout>
   );
