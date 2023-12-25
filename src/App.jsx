@@ -8,7 +8,7 @@ import ContactUs from "./pages/ContactUs.jsx";
 import Price from "./pages/Price.jsx";
 import Careers from "./pages/Careers.jsx";
 import './styles.css';
-import ScrollTop from "./components/scrollTop.jsx";
+import ScrollTop from "./components/ScrollTop.jsx";
 import Payments from "./pages/Payments.jsx";
 
 export default function App() {
