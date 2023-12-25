@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../cms-functions/cms-to-plansPage';
+import { useNavigate } from 'react-router-dom';
+
 
 function Entry(props) {
+
+  const navigate = useNavigate();
+  const navigateToPayments = () => {
+    navigate('/payments');
+  };
+
   return (
     <div className="term">
       <dt>
@@ -9,7 +17,7 @@ function Entry(props) {
         <span >{props.price}</span>
       </dt>
       <dd >{props.description}</dd>
-      <span className="B-button" >{props.btu}</span>
+      <button className="B-button" onClick={navigateToPayments}>{props.btu}</button>
     </div>
   );
 }
