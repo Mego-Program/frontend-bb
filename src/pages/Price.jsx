@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../cms-functions/cms-to-plansPage';
 import { useNavigate } from 'react-router-dom';
 
-
 function Entry(props) {
 
   const navigate = useNavigate();
   const navigateToPayments = () => {
-    navigate('/payments');
+    if (props.btu==="Sign up"){
+      navigate('/managers');
+    }
+    else{
+      navigate('/payments');
+    }
+    
   };
 
   return (
