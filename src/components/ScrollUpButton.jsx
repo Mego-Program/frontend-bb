@@ -6,7 +6,7 @@ import '../App.css'
 export default function YourComponent() {
   return (
     <>
-      <ScrollUpButton/>
+      <ScrollUpButton />
     </>
   );
 }

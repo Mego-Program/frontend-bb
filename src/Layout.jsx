@@ -12,7 +12,7 @@ const Layout = ({ children }) => (
     <div className="app-container">
       <Nav />
       {children}
-      <ScrollUpButton/>
+      <ScrollUpButton />
       <Section />
       <Footer />
     </div>

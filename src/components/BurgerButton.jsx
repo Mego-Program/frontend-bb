@@ -44,10 +44,10 @@ const BurgerButton = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li className="hover:color-yellow">
-                <Link to="/Managers">Managers</Link>
+                <Link to="/managers">Managers</Link>
               </li>
               <li className="hover:color-yellow">
-                <Link to="/Price">Price</Link>
+                <Link to="/price">Price</Link>
               </li>
               <li className="hover:color-yellow">
                 <Link to="/contactus">Contact Us</Link>
