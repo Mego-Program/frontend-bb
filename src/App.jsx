@@ -9,7 +9,7 @@ import Price from "./pages/Price";
 import Careers from "./pages/Careers";
 import ScrollTop from "./components/ScrollTop";
 import Payments from "./pages/Payments";
-import './styles.css';
+import './App.css';
 
 export default function App() {
   return (
