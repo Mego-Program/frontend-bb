@@ -17,6 +17,7 @@ export async function getCustomerReviews() {
                 picture: imageData?.url,
                 name: item.name,
                 job: item.job,
+                shdescription: item.shdescription,
             });
         }
         console.log('Customers Reviews:', customerReviews);
