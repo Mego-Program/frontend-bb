@@ -64,13 +64,13 @@ export default function AboutUs() {
                         {custReview.map(review => (
                             <div key={review.name} className="employee-card-container">
                                 <center>
-                                <EmployeeCard
-                                    srcImg={review.picture}
-                                    Name={review.name}
-                                    Role={review.job}
-                                    Descript={review.shdescription}
-                                    showSocialIcons={false}
-                                />
+                                    <EmployeeCard
+                                        srcImg={review.picture}
+                                        Name={review.name}
+                                        Role={review.job}
+                                        Descript={review.shdescription}
+                                        showSocialIcons={false}
+                                    />
                                 </center>
                             </div>
                         ))}
