@@ -30,7 +30,7 @@ export default function EmployeeCard(props) {
             <div className="text-center mt-4">
                 <h3 className="text-amber-400 text-xl leading-4  font-medium capitalize ">{props.Name}</h3>
                 <h6 className="text-white text-sm font-normal capitalize leading-9">{props.Role}</h6>
-                <h6 className="text-amber-400 text-sm font-normal capitalize leading-5">{props.Descript}</h6>
+                <h6 className="text-amber-400 text-sm font-normal capitalize leading-5 p-4 overflow-y-auto h-[100px]">{props.Descript}</h6>
             </div>
 
             <div className="w-4/5 flex justify-around absolute bottom-3">
