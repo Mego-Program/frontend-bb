@@ -19,7 +19,7 @@ export default function EmployeeCard(props) {
     );
 
     const customerDiscription = props.showCustomerDiscription && (
-        <div className="text-center mt-2 overflow-y-auto max-h-[92px]">
+        <div className="text-center mt-2 overflow-y-auto max-h-[92px] rounded-md">
             <h6 className="bg-slate-900 text-amber-400 text-sm font-normal capitalize leading-4 px-2 py-1">{props.Descript}</h6>
         </div>
     )
@@ -32,7 +32,7 @@ export default function EmployeeCard(props) {
                     <img className="w-full h-full rounded-[50%]" src={props.srcImg} alt="" />
                 </div>
             </div>
-            <div className="text-center mt-4">
+            <div className="text-center mt-4 ">
                 <h3 className="text-amber-400 text-xl leading-4  font-medium capitalize ">{props.Name}</h3>
                 <h6 className="text-white text-sm font-normal capitalize leading-9">{props.Role}</h6>
                 {customerDiscription}
