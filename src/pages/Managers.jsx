@@ -113,6 +113,7 @@ export default function Managers() {
                 Name={member.name}
                 Role={member.jtitle}
                 showSocialIcons={true}
+                showCustomerDiscription={false}
               />
             ))}
           </div>

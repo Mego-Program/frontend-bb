@@ -70,6 +70,7 @@ export default function AboutUs() {
                                         Role={review.job}
                                         Descript={review.shdescription}
                                         showSocialIcons={false}
+                                        showCustomerDiscription={true}
                                     />
                                 </center>
                             </div>
