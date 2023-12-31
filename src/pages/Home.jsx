@@ -34,7 +34,7 @@ export default function Home() {
     return (<>
 
         <div className='w-[100vw] min-h-screen flex flex-col'>
-            <div className='w-full  flex justify-center mb-5 bg-gray-950'
+            <div className='w-full  flex justify-center bg-gray-950'
                 style={{ backgroundImage: "url('Lines 1.png')" }}>
                 <div className=' w-4/5'>
                     <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
