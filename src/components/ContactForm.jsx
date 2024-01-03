@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import YellowButton from "./YellowButton";
 import { SiteClient } from 'datocms-client';
 
+const client = new SiteClient(import.meta.env.VITE_TOKEN2);
+
 
 function ContactForm() {
 
@@ -17,8 +19,6 @@ function ContactForm() {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
-
-    const client = new SiteClient(import.meta.env.VITE_TOKEN2);
 
     const handleSubmit = async (event) => {
         event.preventDefault();

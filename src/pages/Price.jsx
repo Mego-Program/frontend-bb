@@ -6,13 +6,13 @@ function Entry(props) {
 
   const navigate = useNavigate();
   const navigateToPayments = () => {
-    if (props.btu==="Sign up"){
+    if (props.btu === "Sign up") {
       navigate('/managers');
     }
-    else{
+    else {
       navigate('/payments');
     }
-    
+
   };
 
   return (
