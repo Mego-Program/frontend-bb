@@ -1,5 +1,5 @@
 import Benefits from "../components/Benefits"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getCustomerReviews } from "../cms-functions/cms-to-custReview";
 import EmployeeCard from "../components/EmployeeCard";
 import HeroSection from "../components/HeroSection";
@@ -11,7 +11,6 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function AboutUs() {
     const [custReview, setCustReview] = useState([]);
     const [heroSection, setHeroSection] = useState({});
-    const sliderRef = useRef();
 
 
     useEffect(() => {
@@ -59,7 +58,7 @@ export default function AboutUs() {
                     <Benefits num="6" title="SUSTAINABILITY" text="We care about the well-being of mother nature. Work travels and team retreats are done with train." />
                 </div>
 
-                <div className="carousel-container mx-auto" style={{ height: '300px' }} ref={sliderRef}>
+                <div className="carousel-container mx-auto" style={{ height: '300px' }}>
                     <Slider {...settings}>
                         {custReview.map(review => (
                             <div key={review.name} className="employee-card-container">
