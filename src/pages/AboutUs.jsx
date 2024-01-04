@@ -4,20 +4,32 @@ import { getCustomerReviews } from "../cms-functions/cms-to-custReview";
 import EmployeeCard from "../components/EmployeeCard";
 import HeroSection from "../components/HeroSection";
 import { getHeroSection } from "../cms-functions/cms-to-hero";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function AboutUs() {
     const [custReview, setCustReview] = useState([]);
     const [heroSection, setHeroSection] = useState({});
 
+
     useEffect(() => {
         getCustomerReviews().then(setCustReview).catch(console.error);
     }, []);
 
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+    };
+
     useEffect(() => {
         getHeroSection('AboutUs')
-          .then(setHeroSection)
-          .catch(console.error);
-      }, []);
+            .then(setHeroSection)
+            .catch(console.error);
+    }, []);
 
     return (<>
 
@@ -46,15 +58,23 @@ export default function AboutUs() {
                     <Benefits num="6" title="SUSTAINABILITY" text="We care about the well-being of mother nature. Work travels and team retreats are done with train." />
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-4 p-4">
-                    {custReview.map(review => (
-                        <EmployeeCard
-                            key={review.name}
-                            srcImg={review.picture}
-                            Name={review.name}
-                            Role={review.job}
-                        />
-                    ))}
+                <div className="carousel-container mx-auto" style={{ height: '300px' }}>
+                    <Slider {...settings}>
+                        {custReview.map(review => (
+                            <div key={review.name} className="employee-card-container">
+                                <center>
+                                    <EmployeeCard
+                                        srcImg={review.picture}
+                                        Name={review.name}
+                                        Role={review.job}
+                                        Descript={review.shdescription}
+                                        showSocialIcons={false}
+                                        showCustomerDiscription={true}
+                                    />
+                                </center>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ function determineGroup(memberItem) {
         return 'managers';
     } else if (memberItem.department.includes('Mentors')) {
         return 'mentors';
-    } else {
+    } else if (memberItem.department.includes('Marketing')) {
         return 'marketing';
     }
 }

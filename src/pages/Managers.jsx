@@ -112,6 +112,8 @@ export default function Managers() {
                 srcImg={member.picture}
                 Name={member.name}
                 Role={member.jtitle}
+                showSocialIcons={true}
+                showCustomerDiscription={false}
               />
             ))}
           </div>
