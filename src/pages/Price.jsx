@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { getPlansPage } from '../cms-functions/cms-to-plansPage';
 import { useNavigate } from 'react-router-dom';
+// import { useHref } from 'react-router-dom';
 
 function Entry(props) {
 
   const navigate = useNavigate();
   const navigateToPayments = () => {
-    if (props.btu === "Sign up") {
-      navigate('/managers');
+    if (props.btu === "Sign In") {
+      window.location.href = 'https://infra-bneibrak-five.vercel.app/login';
     }
     else {
       navigate('/payments');
