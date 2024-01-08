@@ -26,9 +26,7 @@ export default function AboutUs() {
     };
 
     useEffect(() => {
-        getHeroSection('AboutUs')
-            .then(setHeroSection)
-            .catch(console.error);
+        getHeroSection('AboutUs').then(setHeroSection).catch(console.error);
     }, []);
 
     return (<>

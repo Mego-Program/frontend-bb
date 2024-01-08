@@ -108,7 +108,7 @@ export default function Nav() {
           <ul className="flex text-right space-x-6">
             <li className=" w-32 hover:color-yellow items-end">
               <a
-                href="#SignIn"
+                href="https://infra-bneibrak-five.vercel.app/login"
                 onClick={() => handleLinkClick(7)}
                 className={getLinkClassName(7)}
               >
@@ -116,7 +116,8 @@ export default function Nav() {
               </a>
             </li>
             <li className="color-yellow b-yellow rounded-md hover:text-neutral-50">
-              <button className="btn "> Sign Up</button>
+            <a href="https://infra-bneibrak-five.vercel.app/register"><button className="btn ">Sign Up</button></a>
+              
             </li>
           </ul>
         </div>
