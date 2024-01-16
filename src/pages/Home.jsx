@@ -59,7 +59,7 @@ export default function Home() {
 
                         </div>
                         <div className='flex col-span-1 w-full lg:w-1/2 h-full  justify-end'>
-                            <img className=' h-full' src="../public/home_header.png" alt="" />
+                            <img className=' h-full' src="home_header.png" alt="home" />
                         </div>
                     </div>
                     <div className='max-w-full my-8'>
@@ -67,32 +67,32 @@ export default function Home() {
                             <ComponentHeaderHome
                                 Titel='Visual Studio'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/visual_studio.png' />
+                                srcLogo='visual_studio.png' />
 
                             <ComponentHeaderHome
                                 Titel='Sqlite'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/jquary.png' />
+                                srcLogo='jquary.png' />
 
                             <ComponentHeaderHome
                                 Titel='C-Sharp'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/C-sharp.png' />
+                                srcLogo='C-Sharp.png' />
 
                             <ComponentHeaderHome
                                 Titel='.NET'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/dot_net.png' />
+                                srcLogo='dot_net.png' />
 
                             <ComponentHeaderHome
                                 Titel='NuGet'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/nu_get.png' />
+                                srcLogo='nu_get.png' />
 
                             <ComponentHeaderHome
                                 Titel='MvvmCross'
                                 p='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                                srcLogo='../public/MvvmCross.png' />
+                                srcLogo='MvvmCross.png' />
                         </div>
 
                     </div>
@@ -167,10 +167,10 @@ export default function Home() {
                         <div className="flex lg:w-1/2 w-full items-center ">
 
                             <div className='relative flex justify-center items-center bg-indigo-950 w-[70%] h-[70%] rounded-2xl px-3' data-aos="fade-up-right" data-aos-delay="150">
-                                <img className=' w-[6/7] h-[6/7] object-cover' src="../public/Ellipse 2.png" alt="" />
-                                <img className=' w-[70%] h-[115%] absolute bottom-0  left-9 z-[2] ' src="../public/man.png" alt="" />
-                                <img className=' w-40 h-20 absolute top-8  left-[82%] z-[2]' src="../public/Rounded Rectangle.png" alt="" />
-                                <img className=' w-40 h-20 absolute top-32  left-[82%] z-[2]' src="../public/Rounded Rectangle1.png" alt="" />
+                                <img className=' w-[6/7] h-[6/7] object-cover' src="Ellipse 2.png" alt="" />
+                                <img className=' w-[70%] h-[115%] absolute bottom-0  left-9 z-[2] ' src="man.png" alt="" />
+                                <img className=' w-40 h-20 absolute top-8  left-[82%] z-[2]' src="Rounded Rectangle.png" alt="" />
+                                <img className=' w-40 h-20 absolute top-32  left-[82%] z-[2]' src="Rounded Rectangle1.png" alt="" />
 
                             </div>
                         </div>

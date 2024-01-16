@@ -81,7 +81,7 @@ function Careers() {
       </div>
       <div className="w-60 h-12 bg-amber-400 mx-auto block rounded mb-20 relative">
         <img
-          src="..\public\magnifying_glass_icon.png"
+          src="magnifying_glass_icon.png"
           alt="placeholder"
           className="absolute top-2 left-3 w-8 h-8 object-cover"
         />
