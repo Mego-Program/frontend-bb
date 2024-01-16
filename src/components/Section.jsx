@@ -42,7 +42,7 @@ export default function Section() {
                                 p='Marie provided me some invaluable advices.
                                     i am very satisfied with how i was attebde. 
                                     Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='./arrow_home.png' />
+                                srcImg='arrow_home.png' />
 
                             <CostumerComments
                                 additionalClass='text-slate-950 bg-amber-400'
@@ -52,7 +52,7 @@ export default function Section() {
                                 p='Marie provided me some invaluable advices.
                                     i am very satisfied with how i was attebde.
                                     Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='./right_arrow_black.png' />
+                                srcImg='right_arrow_black.png' />
 
                             <CostumerComments className='mr-0'
                                 h3='Web & Graphic Designer'
@@ -60,24 +60,24 @@ export default function Section() {
                                 p='Marie provided me some invaluable advices.
                                     i am very satisfied with how i was attebde.
                                     Her mentoship has truly helped  me to increase my sales.'
-                                srcImg='./arrow_home.png' />
+                                srcImg='arrow_home.png' />
 
                         </div>
 
                     </div>
                     <div className='max-w-[100vw] my-7'>
                         <div className='flex flex-row w-full justify-between space-x-4 overflow-scroll'>
-                            <ItemTag srcImg='./Flexible 1.png' />
-                            <ItemTag srcImg='./Global.png' />
-                            <ItemTag srcImg='./On-time.png' />
-                            <ItemTag srcImg='./24_7.png' />
-                            <ItemTag srcImg='./Seamless.png' />
-                            <ItemTag srcImg='./SECURITY+&+COMPLIANCE.png' />
-                            <ItemTag srcImg='./research-and-development.png' />
-                            <ItemTag srcImg='./UX-focused.png' />
-                            <ItemTag srcImg='./3456248-200.png' />
-                            <ItemTag srcImg='./domain.png' />
-                            <ItemTag srcImg='./Build.png' />
+                            <ItemTag srcImg='Flexible 1.png' />
+                            <ItemTag srcImg='Global.png' />
+                            <ItemTag srcImg='On-time.png' />
+                            <ItemTag srcImg='24_7.png' />
+                            <ItemTag srcImg='Seamless.png' />
+                            <ItemTag srcImg='SECURITY+&+COMPLIANCE.png' />
+                            <ItemTag srcImg='research-and-development.png' />
+                            <ItemTag srcImg='UX-focused.png' />
+                            <ItemTag srcImg='3456248-200.png' />
+                            <ItemTag srcImg='domain.png' />
+                            <ItemTag srcImg='Build.png' />
 
                         </div>
                     </div>
