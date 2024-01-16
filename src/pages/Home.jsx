@@ -8,7 +8,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useNavigate } from 'react-router-dom';
 
-
 export default function Home() {
     const [heroSection, setHeroSection] = useState({});
     const navigate = useNavigate();
