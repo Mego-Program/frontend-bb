@@ -59,16 +59,13 @@ export default function ContactUs() {
                                 <ContactForm />
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>          
                 </div>
-
                 <div className="">
                     <Directions/>
                 </div>
             </div>
         </div>
-
     </>)
 }
 
