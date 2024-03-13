@@ -4,7 +4,7 @@ export default function Payments() {
        
         <div class="flex justify-center w-[100vw] pt-10">
             
-            <div class="w-[50%] bg-slate-900 text-gray-400 p-10 rounded-md">
+            <div class="w-[90%] lg:w-[50%] bg-slate-900 text-gray-400 p-10 rounded-md">
                 <p class="text-xl text-amber-400 font-medium">Payment Details</p>
                 <p className=" text-amber-100">Complete your order by providing your payment details.</p>
                 <div class="">

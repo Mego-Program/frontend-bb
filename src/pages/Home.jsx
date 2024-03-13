@@ -34,12 +34,12 @@ export default function Home() {
     return (<>
 
         <div className='w-[100vw] min-h-screen flex flex-col'>
-            <div className='w-full  flex justify-center bg-gray-950'
+            <div className='w-[100vw]  flex justify-center bg-gray-950'
                 style={{ backgroundImage: "url('Lines 1.png')" }}>
-                <div className=' w-4/5'>
-                    <div className='flex flex-col lg:flex-row items-center h-[700px] lg:h-[450px] w-full '>
+                <div className=' w-full lg:w-4/5'>
+                    <div className='flex flex-col lg:flex-row items-center h-[450px] w-full '>
                         <div className='flex flex-col w-full lg:w-1/2 '>
-                            <div className='text-left text-white text-4xl font-bold capitalize leading-10'>
+                            <div className='text-left text-white text-2xl lg:text-4xl font-bold capitalize leading-7 lg:leading-10'>
                                 <div className='my-2'>
                                     <span>{heroSection.desc1}</span><br />
                                     <span className="text-amber-400 ">{heroSection.desc2}</span><br />
@@ -58,8 +58,8 @@ export default function Home() {
                             </div>
 
                         </div>
-                        <div className='flex col-span-1 w-full lg:w-1/2 h-full  justify-end'>
-                            <img className=' h-full' src="home_header.png" alt="home" />
+                        <div className=' hidden lg:block col-span-1 w-full lg:w-1/2 h-full  justify-end'>
+                            <img className='h-full' src="home_header.png" alt="home" />
                         </div>
                     </div>
                     <div className='max-w-full my-8'>
@@ -99,11 +99,11 @@ export default function Home() {
 
                 </div>
             </div>
-            <div className='w-full  flex justify-center bg-slate-950'
+            <div className='w-[100vw]  flex justify-center bg-slate-950'
                 style={{ backgroundImage: "url('little-witch-folded-notes 1.png')" }}>
                 <div className=' w-4/5'>
                     <div className='lg:flex-row flex-col w-full h-[900] lg:h-[550px] flex my-3'>
-                        <div className="flex justify-center items-center lg:w-1/2 sm:w-full h-full">
+                        <div className="flex justify-center items-center lg:w-1/2 w-full h-full">
                             <div className=" w-full h-full text-white text-4xl text-left font-bold capitalize leading-10">
                                 <div className=' flex w-full h-1/3  items-end pb-6 mb-3'>
                                     <span className=''>Make your <span className='text-amber-400'>personalized
@@ -114,7 +114,7 @@ export default function Home() {
                                     <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-right">
                                         <div><span className='text-amber-400'>1</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Create Account</h2>
-                                        <p className=' text-base font-normal'>At first create your accont at our website.</p>
+                                        <p className=' text-base font-normal flex-wrap'>At first create your accont at our website.</p>
                                     </div>
 
                                     <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-left" data-aos-delay="300">
@@ -126,13 +126,13 @@ export default function Home() {
                                     <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-right">
                                         <div><span className='text-amber-400'>3</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Learn your skill</h2>
-                                        <p className=' text-base font-normal'>Learn yiur skill from thr best learning materials</p>
+                                        <p className=' text-base font-normal flex-wrap'>Learn yiur skill from thr best learning materials</p>
                                     </div>
 
                                     <div className=' flex flex-col lg:w-1/2 w-full h-1/2 py-2 pr-5' data-aos="fade-down-left" data-aos-delay="300">
                                         <div><span className='text-amber-400'>4</span>.</div>
                                         <h2 className=' text-amber-400 text-2xl my-1'>Make success story</h2>
-                                        <p className=' text-base font-normal'>After learning the skill make steps to success.</p>
+                                        <p className=' text-base font-normal flex-wrap'>After learning the skill make steps to success.</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@ export default function Home() {
         </div >
 
 
-        <div className='w-full flex-col  flex justify-center'>
+        <div className='w-[100vw] flex-col  flex justify-center'>
             <article className='w-full flex justify-center  bg-gray-950 '>
                 <div className=' w-4/5'>
                     <div className='flex lg:flex-row flex-col w-full h-[900] lg:h-[550px] '>
